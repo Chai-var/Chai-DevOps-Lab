@@ -53,11 +53,11 @@ body, html {
   .block {
     background-color: rgba(255, 255, 255, 0.05);
     border: 1px solid #a044ff;
-    border-radius: 12px;
+    border-radius: 25px;
     padding: 20px;
     text-align: center;
     color: #e0e0f0;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
     text-decoration: none;
     transition: all 0.3s ease;
