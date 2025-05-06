@@ -14,7 +14,7 @@ body, html {
   }
   
   .left-block {
-    width: 80px;
+    width: 160px;
     background: linear-gradient(180deg, #6a3093, #a044ff);
     box-shadow: 2px 0 10px rgba(255, 255, 255, 0.1);
   }
