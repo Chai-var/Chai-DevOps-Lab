@@ -195,7 +195,7 @@ body, html {
 .social-links a {
   color: #ffffff;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 20px;
   transition: color 0.3s;
 }
 
@@ -203,43 +203,60 @@ body, html {
   color: #ffd700;
 }
 
+.planet-orbit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin-top: 60px;
+  position: relative;
+}
+
+.planet-link {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.planet-link img {
+  width: 200px; /* Adjust as needed */
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.planet-link span {
+  margin-top: 8px;
+  font-size: 16px;
+  color: #e0e0f0;
+}
+
+.planet-link:hover img {
+  transform: scale(1.1);
+}
+
+/* Diagonal alignment using transform */
+.planet-link:nth-child(1) { transform: translateX(-40px); }
+.planet-link:nth-child(2) { transform: translateX(-20px); }
+.planet-link:nth-child(3) { transform: translateX(0); }
+.planet-link:nth-child(4) { transform: translateX(20px); }
+.planet-link:nth-child(5) { transform: translateX(40px); }
+.planet-link:nth-child(6) { transform: translateX(60px); }
+
+/* Responsive */
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
+  .planet-orbit {
+    gap: 30px;
   }
 
-  .left-block {
-    width: 100%;
-    order: -1;
-    padding: 20px;
-    text-align: center;
+  .planet-link img {
+    width: 80px;
   }
 
-  .content {
-    padding: 20px;
-    text-align: center;
-  }
-
-  .title {
-    font-size: 32px;
-  }
-
-  .subtitle {
-    font-size: 16px;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-    padding: 10px;
-  }
-
-  .block {
-    font-size: 16px;
-    padding: 15px;
-  }
-
-  .left-quote {
-    font-size: 14px;
-    padding: 10px;
+  .planet-link:nth-child(n) {
+    transform: none;
   }
 }
