@@ -246,26 +246,9 @@ body, html {
 .planet-link:nth-child(5) { transform: translateX(40px); }
 .planet-link:nth-child(6) { transform: translateX(60px); }
 
-/* Responsive */
 @media (max-width: 768px) {
   .planet-orbit {
-    gap: 30px;
-  }
-
-  .planet-link img {
-    width: 80px;
-  }
-
-  .planet-link:nth-child(n) {
-    transform: none;
-  }
-}
-
-/* Mobile Optimization */
-@media (max-width: 768px) {
-  .planet-orbit {
-    gap: 30px;
-    margin-top: 20px;
+    gap: 20px;
   }
 
   .planet-link img {
@@ -273,10 +256,10 @@ body, html {
   }
 
   .planet-link span {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .planet-link:nth-child(n) {
-    transform: none; /* Remove X offset on small screens */
+    transform: none;
   }
 }
