@@ -16,7 +16,7 @@ body, html {
   }
   
   .left-block {
-    width: 300px;
+    width: 100px;
     background: linear-gradient(180deg, #6a3093, #a044ff);
     box-shadow: 2px 0 10px rgba(255, 255, 255, 0.1);
     color: #fff;
@@ -38,13 +38,13 @@ body, html {
     line-height: 1.6;
     color: #e0d8f9;
   }
-  .quote {
+  .left-quote {
     color: #eee;
     font-style: italic;
-    font-size: 14px;
+    font-size: 20px;
     /* margin-top: auto; */
     justify-content: center;
-    padding-top: 20px;
+    /* padding-top: 20px; */
   }
   
   
