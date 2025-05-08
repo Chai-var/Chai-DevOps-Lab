@@ -16,7 +16,7 @@ body, html {
   }
   
   .left-block {
-    width: 200px;
+    width: 300px;
     background: linear-gradient(180deg, #6a3093, #a044ff);
     box-shadow: 2px 0 10px rgba(255, 255, 255, 0.1);
     color: #fff;
@@ -41,7 +41,7 @@ body, html {
   .left-quote {
     color: #eee;
     font-style: italic;
-    font-size: 40px;
+    font-size: 15px;
     /* margin-top: auto; */
     justify-content: center;
     /* padding-top: 20px; */
