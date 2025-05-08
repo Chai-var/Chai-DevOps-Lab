@@ -19,6 +19,24 @@ body, html {
     width: 300px;
     background: linear-gradient(180deg, #6a3093, #a044ff);
     box-shadow: 2px 0 10px rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .about-me h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+  
+  .about-me p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #e0d8f9;
   }
   
   .content {
@@ -111,4 +129,30 @@ body, html {
     to { background-position: -10000px 10000px; }
   }
 
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+  }
+  
+  .social-links {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .social-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+  }
+  
+  .social-links a:hover {
+    color: #ffd700;
+  }
   
