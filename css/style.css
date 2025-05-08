@@ -260,3 +260,23 @@ body, html {
     transform: none;
   }
 }
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .planet-orbit {
+    gap: 30px;
+    margin-top: 20px;
+  }
+
+  .planet-link img {
+    width: 70px;
+  }
+
+  .planet-link span {
+    font-size: 13px;
+  }
+
+  .planet-link:nth-child(n) {
+    transform: none; /* Remove X offset on small screens */
+  }
+}
