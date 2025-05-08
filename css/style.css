@@ -12,8 +12,14 @@ body, html {
   
   .container {
     display: flex;
-    height: 100vh;
+    flex-wrap: wrap;
+    flex-direction: row;
   }
+  
+  /* @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    } */
   
   .left-block {
     width: 300px;
@@ -98,16 +104,7 @@ body, html {
     transform: scale(1.05);
     box-shadow: 0 0 20px rgba(160, 68, 255, 0.6);
   }
-  
-  @media (max-width: 600px) {
-    .title {
-      font-size: 36px;
-    }
-  
-    .subtitle {
-      font-size: 16px;
-    }
-  }
+
 
   .floating-icon {
     position: absolute;
@@ -165,3 +162,4 @@ body, html {
     color: #ffd700;
   }
   
+/* } */
