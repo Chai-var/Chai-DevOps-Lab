@@ -47,7 +47,6 @@ body, html {
   /* padding-top: 20px; */
 }
 
-
 .content {
   flex-grow: 1;
   display: flex;
@@ -161,4 +160,45 @@ body, html {
 
 .social-links a:hover {
   color: #ffd700;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left-block {
+    width: 100%;
+    order: -1;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .content {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+
+  .block {
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  .left-quote {
+    font-size: 14px;
+    padding: 10px;
+  }
 }
