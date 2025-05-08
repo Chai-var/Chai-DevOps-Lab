@@ -38,6 +38,14 @@ body, html {
     line-height: 1.6;
     color: #e0d8f9;
   }
+  .quote {
+    color: #eee;
+    font-style: italic;
+    font-size: 14px;
+    margin-top: auto;
+    padding-top: 20px;
+  }
+  
   
   .content {
     flex-grow: 1;
