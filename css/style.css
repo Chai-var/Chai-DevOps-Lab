@@ -1,44 +1,38 @@
-/* css/style.css */
-body, html {
-  background-image: url(assets/img/stardust-1.avif);
+body {
   margin: 0;
-  overflow-x: hidden;
-  position: relative;
-  padding: 0;
   font-family: 'Oswald', sans-serif;
-  height: 100%;
+  background: radial-gradient(ellipse at center, #0f0c29 0%, #24243e 100%);
   color: #e0e0f0;
-  background: linear-gradient(to bottom right, #0f0c29, #302b63, #24243e);
+  overflow: hidden;
+  height: 100vh;
 }
 
 .container {
   display: flex;
   height: 100vh;
-  flex-wrap: wrap;
-  flex-direction: row;
+  width: 100vw;
+  margin-left: 320px; /* match left block width */
 }
+
 
 .left-block {
   position: fixed;
   top: 0;
   left: 0;
+  width: 250px; /* slightly more space for text if needed */
   height: 100vh;
-  width: 300px;
   background: linear-gradient(180deg, #6a3093, #a044ff);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 30px;
-  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.4);
-  z-index: 5;
+  padding: 40px 25px;
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  overflow-y: auto;
 }
 
 .left-quote {
-  font-size: 18px;
+  font-size: 15px;
   font-style: italic;
   text-align: center;
-  line-height: 1.6;
+  line-height: 1.8;
   max-width: 240px;
   animation: fadeInQuote 2s ease forwards;
   opacity: 0;
@@ -60,72 +54,40 @@ body, html {
   line-height: 1.6;
   color: #e0d8f9;
 }
-
-.content {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 40px;
-}
-
-.title {
-  font-size: 48px;
-  font-weight: 600;
-  color: #ffffff;
-  text-shadow: 1px 1px 4px #a044ff;
-  margin-top: 0%;
-
-}
-
 .subtitle {
-  font-size: 20px;
-  margin-top: 0px;
-  color: #d1c4e9;
-  margin-bottom: 40px;
-}
-
-.profile-pic {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
+  font-size: 16px;
+  font-weight: 600;
   margin-bottom: 15px;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
-}
-/* -------------------------------------------------------------------- */
-/* social links are for about-me page contact info */
-.social-links {
-  margin-top: 15px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.social-links a {
   color: #ffffff;
-  text-decoration: none;
-  font-size: 20px;
-  transition: color 0.3s;
 }
 
-.social-links a:hover {
-  color: #ffd700;
-}
-/* ------------------------------------------------------ */
-.planet-orbit {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  margin-top: 60px;
+/* Adjust orbit-wrapper now that it's inside container */
+
+.orbit-wrapper {
+  flex-grow: 1;
   position: relative;
+  padding-left: 100px; /* Shift orbit away from quote block */
 }
 
-.planet-orbit {
-  position: relative;
-  padding: 100px 0;
+.center-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 3;
+}
+
+
+.center-content h1 {
+  font-size: 36px;
+  margin: 5px 10px;
+  text-align: center;
+}
+
+.center-content p {
+  font-size: 18px;
+  margin: 5px 10px;
 }
 
 .planet-link {
@@ -135,69 +97,68 @@ body, html {
   align-items: center;
   text-decoration: none;
   color: white;
-  transition: transform 0.3s ease;
+  z-index: 3;
 }
 
 .planet-link img {
-  width: 100px;
+  width: 180px;
   height: auto;
   transition: transform 0.3s ease;
-  z-index: 2;
 }
 
 .planet-link span {
-  margin-top: 8px;
-  font-size: 16px;
-  color: #e0e0f0;
-  z-index: 2;
+  margin-top: 0;
+  font-size: 14px;
+  color: #fff;
 }
 
 .planet-link:hover img {
   transform: scale(1.1);
 }
 
-.planet-link:nth-child(1) { transform: translateX(-40px); }
-.planet-link:nth-child(2) { transform: translateX(-20px); }
-.planet-link:nth-child(3) { transform: translateX(0); }
-.planet-link:nth-child(4) { transform: translateX(20px); }
-.planet-link:nth-child(5) { transform: translateX(40px); }
-.planet-link:nth-child(6) { transform: translateX(60px); }
+/* Planet positions around center */
+.planet-link.about         { top: 25%; left: 30%; }
+.planet-link.resume        { top: 0%; left: 55%; }
+.planet-link.skills        { top: 10%; left: 85%; }
+.planet-link.projects      { bottom: 20%; left: 70%; }
+.planet-link.certifications { bottom: 0%; left: 45%; }
+.planet-link.blogs         { bottom: 10%; left: 18%; }
 
 
-/* -----------------------------
-   DESKTOP ORBITAL ALIGNMENT
------------------------------ */
-@media (min-width: 769px) {
-  .planet-orbit {
-    height: 10vh;
-    width: 50vw;
+
+/* Orbit ellipse SVG styling */
+.orbit-ellipse {
+  position: absolute;
+  top: 50%;
+  left: 57%;
+  width: 75vw;
+  height: 100vh;
+  transform: translate(-50%, -50%) rotate(-25deg);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.orbit-ellipse svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: rgba(160, 68, 255, 0.7); /* Glowing purple */
+  stroke-width: 1.3;
+  filter: drop-shadow(0 0 6px rgba(160, 68, 255, 0.5));
+}
+
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .planet-link img {
+    width: 50px;
   }
 
-  .planet-link:nth-child(1) {
-    top: 5%; left: 15%;
-  }
-  .planet-link:nth-child(2) {
-    top: 20%; left: 40%;
-  }
-  .planet-link:nth-child(3) {
-    top: 35%; left: 45%;
-  }
-  .planet-link:nth-child(4) {
-    top: 50%; left: 60%;
-  }
-  .planet-link:nth-child(5) {
-    top: 65%; left: 75%;
-  }
-  .planet-link:nth-child(6) {
-    top: 80%; left: 90%;
+  .center-content h1 {
+    font-size: 24px;
   }
 
-  .orbit-line {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 1px dashed rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    z-index: 1;
+  .center-content p {
+    font-size: 14px;
   }
 }
