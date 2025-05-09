@@ -234,6 +234,14 @@ body {
     font-size: 14px;
     margin: 3px 0;
   }
+  .planet-link {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  bottom: auto !important;
+  right: auto !important;
+  margin: 15px 0;
+}
 
   .planet-link {
     position: relative;
