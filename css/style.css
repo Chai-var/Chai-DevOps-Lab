@@ -162,20 +162,27 @@ body {
   }
 
   .left-block {
-    position: relative;
-    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30%;
     height: auto;
     padding: 20px;
     text-align: center;
   }
 
   .left-quote {
-    font-size: 14px;
+    font-size: 10px;
     max-width: 100%;
     line-height: 1.6;
     opacity: 1;
     animation: none;
+    animation: fadeInQuote 2s ease forwards;
   }
+  @keyframes fadeInQuote {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
   .subtitle {
     font-size: 16px;
@@ -193,6 +200,22 @@ body {
     flex-direction: column;
     align-items: center;
   }
+  /* Orbit ellipse SVG styling */
+  .orbit-ellipse {
+    display: block;
+    width: 90vw;
+    height: 60vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-15deg);
+  }
+
+  .orbit-ellipse svg {
+    stroke-width: 1.2;
+    stroke: rgba(160, 68, 255, 0.4);
+    filter: drop-shadow(0 0 4px rgba(160, 68, 255, 0.3));
+  }
+
 
   .center-content {
     position: relative;
