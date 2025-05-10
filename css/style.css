@@ -187,15 +187,15 @@ body {
   }
 
   .center-content h1 {
-    font-size: 20px;
+    font-size: 15px;
   }
 
   .center-content p {
-    font-size: 10px;
+    font-size: 8px;
   }
 
   .planet-link img {
-    width: 80px;
+    width: 75px;
   }
 
   .planet-link span {
@@ -203,13 +203,19 @@ body {
   }
 
   .orbit-ellipse {
-    width: 90vw;
-    height: 50vh;
+    width: 80vw;
+    height: 40vh;
     left: 70%;
-    transform: translate(-50%, -50%) rotate(-25deg);
+    transform: translate(-50%, -50%) rotate(-45deg);
   }
 
-  .planet-link.about         { top: 20%; left: 25%; }
+  .orbit-ellipse svg {
+    width: 100%;
+    height: 100%;
+    stroke-width: 1;
+  }
+
+  .planet-link.about         { top: 15%; left: 45%; }
   .planet-link.resume        { top: 5%; left: 50%; }
   .planet-link.skills        { top: 15%; left: 75%; }
   .planet-link.projects      { bottom: 25%; left: 60%; }
