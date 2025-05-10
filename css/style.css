@@ -146,5 +146,65 @@ body {
   filter: drop-shadow(0 0 6px rgba(160, 68, 255, 0.5));
 }
 
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  body {
+    overflow-y: auto;
+    height: auto;
+  }
 
+  .container {
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  .left-block {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    box-shadow: none;
+  }
+
+  .orbit-wrapper {
+    padding-left: 0;
+    margin-top: 20px;
+  }
+
+  .center-content {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .center-content h1 {
+    font-size: 28px;
+  }
+
+  .center-content p {
+    font-size: 16px;
+  }
+
+  .planet-link img {
+    width: 150px;
+  }
+
+  .planet-link span {
+    font-size: 12px;
+  }
+
+  .orbit-ellipse {
+    width: 90vw;
+    height: 50vh;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-25deg);
+  }
+
+  .planet-link.about         { top: 20%; left: 25%; }
+  .planet-link.resume        { top: 5%; left: 50%; }
+  .planet-link.skills        { top: 15%; left: 75%; }
+  .planet-link.projects      { bottom: 25%; left: 60%; }
+  .planet-link.certifications { bottom: 5%; left: 40%; }
+  .planet-link.blogs         { bottom: 15%; left: 15%; }
+}
 
