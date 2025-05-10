@@ -1,59 +1,36 @@
+/* -----------------------------
+   GLOBAL BASE STYLES
+----------------------------- */
 body {
   margin: 0;
   font-family: 'Oswald', sans-serif;
   background: radial-gradient(ellipse at center, #0f0c29 0%, #24243e 100%);
   color: #e0e0f0;
-  overflow: hidden;
-  height: 100vh;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
 .container {
   display: flex;
-  height: 100vh;
   width: 100vw;
-  margin-left: 320px; /* match left block width */
+  height: 100vh;
+  overflow: hidden;
 }
-
 
 .left-block {
   position: fixed;
   top: 0;
   left: 0;
-  width: 250px; /* slightly more space for text if needed */
+  width: 320px;
   height: 100vh;
   background: linear-gradient(180deg, #6a3093, #a044ff);
+  color: #fff;
   padding: 40px 25px;
   box-shadow: 2px 0 15px rgba(0, 0, 0, 0.2);
   z-index: 10;
   overflow-y: auto;
 }
 
-.left-quote {
-  font-size: 15px;
-  font-style: italic;
-  text-align: center;
-  line-height: 1.8;
-  max-width: 240px;
-  animation: fadeInQuote 2s ease forwards;
-  opacity: 0;
-}
-
-@keyframes fadeInQuote {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.about-me h2 {
-  font-size: 22px;
-  margin-bottom: 10px;
-  color: #ffffff;
-}
-
-.about-me p {
-  font-size: 15px;
-  line-height: 1.6;
-  color: #e0d8f9;
-}
 .subtitle {
   font-size: 16px;
   font-weight: 600;
@@ -61,47 +38,55 @@ body {
   color: #ffffff;
 }
 
-/* Adjust orbit-wrapper now that it's inside container */
+.left-quote {
+  font-size: 13px;
+  line-height: 1.6;
+  font-style: italic;
+  color: #f0e6ff;
+}
 
 .orbit-wrapper {
+  margin-left: 320px;
   flex-grow: 1;
   position: relative;
-  padding-left: 100px; /* Shift orbit away from quote block */
+  width: calc(100vw - 320px);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .center-content {
   position: absolute;
   top: 50%;
-  left: 55%;
+  left: 47%;
   transform: translate(-50%, -50%);
   text-align: center;
-  z-index: 3;
+  z-index: 2;
 }
-
 
 .center-content h1 {
   font-size: 36px;
-  margin: 5px 10px;
-  text-align: center;
+  margin: 0;
 }
 
 .center-content p {
   font-size: 18px;
-  margin: 5px 10px;
+  margin: 8px 0;
 }
 
+/* -----------------------------
+   PLANETS AND ORBIT PATH
+----------------------------- */
 .planet-link {
   position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: white;
-  z-index: 3;
+  width: 150px;
+  height: 150px;
+  z-index: 5;
 }
 
 .planet-link img {
-  width: 200px;
+  width: 100%;
   height: auto;
   transition: transform 0.3s ease;
 }
@@ -109,118 +94,91 @@ body {
 .planet-link span {
   font-size: 14px;
   color: #fff;
+  text-align: center;
 }
 
 .planet-link:hover img {
   transform: scale(1.1);
 }
 
-/* Planet positions around center */
-.planet-link.about         { top: 25%; left: 30%; }
-.planet-link.resume        { top: 0%; left: 55%; }
-.planet-link.skills        { top: 10%; left: 85%; }
-.planet-link.projects      { bottom: 20%; left: 70%; }
-.planet-link.certifications { bottom: 0%; left: 45%; }
-.planet-link.blogs         { bottom: 10%; left: 18%; }
-
-
-
-/* Orbit ellipse SVG styling */
-.orbit-ellipse {
-  position: fixed;
-  top: 50%;
-  left: 57%;
-  width: 75vw;
-  height: 100vh;
-  transform: translate(-50%, -50%) rotate(-25deg);
+.orbit-path {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 1;
   pointer-events: none;
 }
 
-.orbit-ellipse svg {
-  width: 100%;
-  height: 100%;
-  fill: none;
-  stroke: rgba(160, 68, 255, 0.7); /* Glowing purple */
-  stroke-width: 1.3;
-  filter: drop-shadow(0 0 6px rgba(160, 68, 255, 0.5));
-}
-
-/* Mobile responsiveness */
+/* -----------------------------
+   MOBILE RESPONSIVENESS
+----------------------------- */
 @media (max-width: 768px) {
   body {
-    overflow-y: fixed;
-    overflow-x: hidden;
+    overflow-y: auto;
     height: auto;
   }
 
   .container {
     flex-direction: column;
     margin-left: 0;
+    width: 100%;
+    height: auto;
   }
 
   .left-block {
-    position: fixed;
-    width: 30%;
+    position: relative;
+    width: 100%;
     height: auto;
     padding: 20px;
-    box-shadow: none;
+    text-align: center;
   }
 
-  .left-quote {
-  font-size: 12px;
-  font-style: italic;
-}
-
   .orbit-wrapper {
-    padding-left: 0;
+    padding: 0;
+    margin-left: 0;
+    width: 100%;
+    height: auto;
     margin-top: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .center-content {
-    position: absolute;
-    top: 50%;
-    left: 65%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 3;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 20px 0;
   }
 
   .center-content h1 {
-    font-size: 15px;
+    font-size: 24px;
+    margin: 5px 0;
   }
 
   .center-content p {
-    font-size: 8px;
+    font-size: 14px;
+    margin: 3px 0;
+  }
+
+  .planet-link {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    bottom: auto !important;
+    right: auto !important;
+    margin: 15px 0;
   }
 
   .planet-link img {
-    width: 75px;
+    width: 70px;
   }
 
-  .planet-link span {
-    font-size: 10px;
+  .orbit-path {
+    display: none;
   }
-
-  .orbit-ellipse {
-    width: 80vw;
-    height: 40vh;
-    top: 40%;
-    left: 70%;
-    transform: translate(-50%, -50%) rotate(-45deg);
-  }
-
-  .orbit-ellipse svg {
-    width: 100%;
-    height: 100%;
-    stroke-width: 1;
-  }
-
-  .planet-link.about         { top: 0%; left: 45%; }
-  .planet-link.resume        { top: 0%; left: 50%; }
-  .planet-link.skills        { top: 0%; left: 75%; }
-  .planet-link.projects      { bottom: 50%; left: 60%; }
-  .planet-link.certifications { bottom: 50%; left: 40%; }
-  .planet-link.blogs         { bottom: 50%; left: 15%; }
 }
-
