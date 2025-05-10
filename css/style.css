@@ -149,7 +149,8 @@ body {
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   body {
-    overflow-y: auto;
+    overflow-y: fixed;
+    overflow-x: hidden;
     height: auto;
   }
 
@@ -159,12 +160,17 @@ body {
   }
 
   .left-block {
-    position: relative;
-    width: 100%;
+    position: fixed;
+    width: 30%;
     height: auto;
     padding: 20px;
     box-shadow: none;
   }
+
+  .left-quote {
+  font-size: 12px;
+  font-style: italic;
+}
 
   .orbit-wrapper {
     padding-left: 0;
@@ -172,31 +178,34 @@ body {
   }
 
   .center-content {
+    position: absolute;
     top: 50%;
-    left: 50%;
+    left: 65%;
     transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 3;
   }
 
   .center-content h1 {
-    font-size: 28px;
+    font-size: 20px;
   }
 
   .center-content p {
-    font-size: 16px;
+    font-size: 10px;
   }
 
   .planet-link img {
-    width: 150px;
+    width: 80px;
   }
 
   .planet-link span {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .orbit-ellipse {
     width: 90vw;
     height: 50vh;
-    left: 50%;
+    left: 70%;
     transform: translate(-50%, -50%) rotate(-25deg);
   }
 
