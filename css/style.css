@@ -21,28 +21,33 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 320px;
+  width: 250px; /* slightly more space for text if needed */
   height: 100vh;
   background: linear-gradient(180deg, #6a3093, #a044ff);
-  color: #fff;
   padding: 40px 25px;
   box-shadow: 2px 0 15px rgba(0, 0, 0, 0.2);
   z-index: 10;
   overflow-y: auto;
 }
 
+.left-quote {
+  font-size: 15px;
+  font-style: italic;
+  text-align: center;
+  line-height: 1.8;
+  max-width: 240px;
+  animation: fadeInQuote 2s ease forwards;
+  opacity: 0;
+}
+@keyframes fadeInQuote {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 .subtitle {
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 15px;
   color: #ffffff;
-}
-
-.left-quote {
-  font-size: 13px;
-  line-height: 1.6;
-  font-style: italic;
-  color: #f0e6ff;
 }
 
 .orbit-wrapper {
@@ -80,8 +85,9 @@ body {
 ----------------------------- */
 .planet-link {
   position: absolute;
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: auto;
+  text-align: center;
   z-index: 5;
 }
 
@@ -92,9 +98,10 @@ body {
 }
 
 .planet-link span {
+  margin-top: 6px;
+  display: block;
   font-size: 14px;
   color: #fff;
-  text-align: center;
 }
 
 .planet-link:hover img {
@@ -109,6 +116,13 @@ body {
   height: 100%;
   z-index: 1;
   pointer-events: none;
+}
+
+.orbit-path ellipse {
+  stroke: rgba(160, 68, 255, 0.6);
+  stroke-width: 10;
+  fill: none;
+  filter: drop-shadow(0 0 14px rgba(160, 68, 255, 0.6));
 }
 
 /* -----------------------------
@@ -139,7 +153,7 @@ body {
     padding: 0;
     margin-left: 0;
     width: 100%;
-    height: auto;
+    height: 90vh;
     margin-top: 20px;
     position: relative;
     display: flex;

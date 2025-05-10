@@ -27,16 +27,22 @@
 
       <!-- SVG Orbit Path -->
       <svg id="orbit" class="orbit-path" viewBox="0 0 1000 800" preserveAspectRatio="xMidYMid meet">
-        <ellipse cx="500" cy="400" rx="300" ry="200" fill="none" stroke="rgba(160,68,255,0.5)" stroke-width="2.5" />
+        <g transform="rotate(-35 500 400)">
+          <ellipse cx="500" cy="400" rx="500" ry="300"
+                   fill="none"
+                   stroke="rgba(160, 68, 255, 0.6)"
+                   stroke-width="20"
+                   filter="drop-shadow(0 0 12px rgba(160, 68, 255, 0.4))" />
+        </g>
       </svg>
 
-      <!-- Planet elements -->
-      <div class="planet-link"><img src="assets\img\planets\mars-1.png" alt="About" /><span>About me</span></div>
-      <div class="planet-link"><img src="assets\img\planets\earth-1.png" alt="Resume" /></div>
-      <div class="planet-link"><img src="assets\img\planets\saturn-1.png" alt="Skills" /></div>
-      <div class="planet-link"><img src="assets\img\planets\venus-1.png" alt="Projects" /></div>
-      <div class="planet-link"><img src="assets\img\planets\mercury-1.png" alt="Certifications" /></div>
-      <div class="planet-link"><img src="assets\img\planets\jupiter-1.png" alt="Blogs" /></div>
+      <!-- Planet elements (reordered) -->
+      <div class="planet-link"><img src="assets/img/planets/mars-1.png" alt="About Me"><span>About Me</span></div>
+      <div class="planet-link"><img src="assets/img/planets/earth-1.png" alt="Resume"><span>Resume</span></div>
+      <div class="planet-link"><img src="assets/img/planets/saturn-1.png" alt="Skills"><span>Skills</span></div>
+      <div class="planet-link"><img src="assets/img/planets/venus-1.png" alt="Projects"><span>Projects</span></div>
+      <div class="planet-link"><img src="assets/img/planets/mercury-1.png" alt="Certifications"><span>Certifications</span></div>
+      <div class="planet-link"><img src="assets/img/planets/jupiter-1.png" alt="Blogs"><span>Blogs</span></div>
     </div>
   </div>
 
