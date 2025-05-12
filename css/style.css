@@ -13,14 +13,62 @@ body {
 
 .container {
   display: flex;
-  grid-template-columns: 1fr 3fr;
+  flex-wrap: wrap;
   width: 90%;
   height: 1200px;
   overflow: hidden;
 }
 
+/* 
+The right block of screen
+This is where the planets are displayed
+This is also where the orbit path is displayed
+*/
+
+.orbit-wrapper {
+  margin-left: 320px;
+  flex: 1; /* grow */
+  position: fixed; /* fixed to the right */
+  width: calc(100vw - 320px);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.orbit-center {
+  position: flex;
+  /* top: 50%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  text-align: center;
+  z-index: 2;
+}
+
+.orbit-center h1 {
+  font-size: auto;
+  font-weight: 700;
+  margin: 0;
+}
+
+.orbit-center p {
+  font-size: auto;
+  font-weight: 400;
+  margin: 8px 0;
+}
+.orbit-center span {
+  font-size: auto;
+  font-weight: 400;
+  color: #fff;
+}
+
+/* 
+The Left block of the screen
+This is where the quote and subtitle are displayed
+*/
 .left-block {
   position: fixed;
+  flex: 0.3;
   top: 0;
   left: 0;
   width: 250px; /* slightly more space for text if needed */
@@ -53,44 +101,6 @@ body {
   color: #ffffff;
 }
 
-.orbit-wrapper {
-  margin-left: 320px;
-  flex-grow: 1;
-  position: fixed; /* fixed to the right */
-  width: calc(100vw - 320px);
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.orbit-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 2;
-}
-
-.orbit-center h1 {
-  font-size: 36px;
-  margin: 0;
-}
-
-.orbit-center p {
-  font-size: 18px;
-  margin: 8px 0;
-}
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  /* gap: px; */
-}
-.item {
-  flex: 1 1 300px; /* grow, shrink, base size */
-}
-
 
 /* -----------------------------
    PLANETS AND ORBIT PATH
@@ -118,7 +128,7 @@ body {
 
 .planet-link span {
   margin-top: 3px;
-  display: block;
+  display: relative;
   font-size: 14px;
   color: #fff;
 }
