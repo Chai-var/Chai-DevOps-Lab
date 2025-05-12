@@ -80,6 +80,7 @@ body {
   margin: 8px 0;
 }
 
+
 /* -----------------------------
    PLANETS AND ORBIT PATH
 ----------------------------- */
@@ -163,69 +164,87 @@ body {
 ----------------------------- */
 @media (max-width: 768px) {
   body {
-    overflow-y: auto;
-    height: auto;
+    flex-direction: column;
+    overflow-x: hidden;
   }
 
   .container {
     flex-direction: column;
-    margin-left: 0;
-    width: 100%;
-    height: auto;
+    align-items: center;
+    padding: 1rem;
   }
 
   .left-block {
-    position: relative;
     width: 100%;
-    height: auto;
-    padding: 20px;
+    padding: 1rem;
     text-align: center;
   }
 
+  .left-block .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .left-block .left-quote {
+    font-size: 0.95rem;
+  }
+
   .orbit-wrapper {
-    padding: 0;
-    margin-left: 0;
     width: 100%;
-    height: 90vh;
-    margin-top: 20px;
+    margin-top: 2rem;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  }
+  .orbit-center {
+  width: 80vw;
+  max-width: 400px;
+}
+
+  .orbit-center h1 {
+    font-size: 1.5rem;
   }
 
-  .center-content {
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-    margin: 20px 0;
-  }
-
-  .center-content h1 {
-    font-size: 24px;
-    margin: 5px 0;
-  }
-
-  .center-content p {
-    font-size: 14px;
-    margin: 3px 0;
+  .orbit-center p {
+    font-size: 0.9rem;
   }
 
   .planet-link {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    bottom: auto !important;
-    right: auto !important;
-    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    margin: 0.6rem auto;
+    gap: 0.6rem;
   }
 
   .planet-link img {
-    width: 70px;
+    width: 40px;
+    height: 40px;
   }
 
   .orbit-path {
-    display: none;
+    width: 90%;
+    height: auto;
+  }
+
+  .orbiting-moon {
+    width: 12px;
+    height: 12px;
+  }
+}
+/* -----------------------------
+   Planet navigation for very small screens
+   (mobile)
+----------------------------- */
+
+@media (max-width: 480px) {
+  .planet-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 0.5rem;
+    justify-content: start;
+    scroll-snap-type: x mandatory;
+  }
+
+  .planet-link {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
   }
 }
