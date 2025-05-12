@@ -61,7 +61,7 @@ body {
   align-items: center;
 }
 
-.center-content {
+.orbit-center {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -70,12 +70,12 @@ body {
   z-index: 2;
 }
 
-.center-content h1 {
+.orbit-center h1 {
   font-size: 36px;
   margin: 0;
 }
 
-.center-content p {
+.orbit-center p {
   font-size: 18px;
   margin: 8px 0;
 }
@@ -105,7 +105,7 @@ body {
 }
 
 .planet-link span {
-  margin-top: 6px;
+  margin-top: 3px;
   display: block;
   font-size: 14px;
   color: #fff;
@@ -131,6 +131,32 @@ body {
   fill: none;
   filter: drop-shadow(0 0 14px rgba(160, 68, 255, 0.6));
 }
+
+/* -----------------------------
+   MOON/STAR ORBITING BODY
+----------------------------- */
+.orbiting-body {
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, #fffacd, #ffd700); /* moon-like */
+  border-radius: 50%;
+  position: absolute;
+  z-index: 10;
+  box-shadow: 0 0 10px 5px rgba(255, 255, 150, 0.6);
+  transform: translate(-50%, -50%);
+}
+.orbiting-body::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 5px;
+  background: linear-gradient(to left, rgba(255,255,255,0.5), transparent);
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+
 
 /* -----------------------------
    MOBILE RESPONSIVENESS

@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const centerEl = document.querySelector(".center-content");
+  const centerEl = document.querySelector(".orbit-center");
   const planets = document.querySelectorAll(".planet-link");
 
   function placePlanetsInCircle() {
