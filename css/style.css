@@ -81,7 +81,7 @@ This is where the quote and subtitle are displayed
 }
 
 .left-quote {
-  font-size: 15px;
+  font-size: auto;
   font-style: italic;
   text-align: center;
   line-height: 1.8;
@@ -95,7 +95,7 @@ This is where the quote and subtitle are displayed
 }
 .subtitle {
   
-  font-size: 20px;
+  font-size: auto;
   font-weight: 600;
   margin-bottom: 15px;
   color: #ffffff;
