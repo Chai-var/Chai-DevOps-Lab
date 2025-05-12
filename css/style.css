@@ -171,61 +171,53 @@ body {
   .container {
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
     padding: 1rem;
   }
 
   .left-block {
     width: 100%;
-    padding: 1rem;
+    max-width: 100%;
     text-align: center;
-  }
-
-  .left-block .subtitle {
-    font-size: 1.2rem;
-  }
-
-  .left-block .left-quote {
-    font-size: 0.95rem;
+    padding: 1rem 0;
   }
 
   .orbit-wrapper {
     width: 100%;
-    margin-top: 2rem;
+    height: auto;
     position: relative;
+    margin-top: 2rem;
   }
-  .orbit-center {
-  width: 80vw;
-  max-width: 400px;
-}
 
   .orbit-center h1 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .orbit-center p {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .planet-link {
-    display: flex;
+    flex-direction: row;
     align-items: center;
-    margin: 0.6rem auto;
-    gap: 0.6rem;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
   }
 
   .planet-link img {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
   }
 
   .orbit-path {
-    width: 90%;
-    height: auto;
+    width: 80vw;
+    height: 80vw;
   }
 
   .orbiting-moon {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
   }
 }
 /* -----------------------------
@@ -246,5 +238,37 @@ body {
   .planet-link {
     flex: 0 0 auto;
     scroll-snap-align: start;
+  }
+}
+
+/* -----------------------------
+   Desktop view for mobile screens
+----------------------------- */
+@media screen and (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .left-block, .orbit-wrapper {
+    width: 100%;
+    max-width: 90%;
+    text-align: center;
+  }
+
+  .orbit-wrapper {
+    margin-top: 2rem;
+  }
+
+  .planet-link {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .orbit-path {
+    width: 80vw;
+    height: 80vw;
   }
 }
