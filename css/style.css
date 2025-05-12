@@ -177,9 +177,14 @@ body {
 
   .left-block {
     width: 40%;
-    max-width: 100%;
     text-align: center;
     padding: 1rem 0;
+  }
+  .left-quote{
+    font-size: auto;
+    font-style: italic;
+    line-height: auto;
+    margin-bottom: 1rem;
   }
 
   .orbit-wrapper {
