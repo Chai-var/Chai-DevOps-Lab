@@ -162,7 +162,7 @@ body {
 /* -----------------------------
    MOBILE RESPONSIVENESS
 ----------------------------- */
-@media (max-width: 768px) {
+@media (max-width: 1280px) {
   body {
     flex-direction: column;
     overflow-x: hidden;
