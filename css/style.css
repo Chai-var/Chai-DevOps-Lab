@@ -47,13 +47,11 @@ This is also where the orbit path is displayed
 
 .orbit-center h1 {
   font-size: auto;
-  font-weight: 700;
   margin: 0;
 }
 
 .orbit-center p {
   font-size: auto;
-  font-weight: 400;
   margin: 8px 0;
 }
 .orbit-center span {
@@ -81,7 +79,7 @@ This is where the quote and subtitle are displayed
 }
 
 .left-quote {
-  font-size: auto;
+  font-size: 15px;
   font-style: italic;
   text-align: center;
   line-height: 1.8;
@@ -95,10 +93,35 @@ This is where the quote and subtitle are displayed
 }
 .subtitle {
   
-  font-size: auto;
+  font-size: 20px;
   font-weight: 600;
   margin-bottom: 15px;
   color: #ffffff;
+}
+/* 
+SVG flexbox styling
+*/
+.svg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+svg {
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 600px) {
+  .svg-container svg {
+    width: 80%;
+  }
+}
+
+@media (max-width: 400px) {
+  .svg-container svg {
+    width: 100%;
+  }
 }
 
 
@@ -197,7 +220,7 @@ This is where the quote and subtitle are displayed
   }
 
   .left-block {
-    width: 40%;
+    width: 10%;
     text-align: center;
     padding: 1rem 0;
   }
@@ -298,3 +321,4 @@ This is where the quote and subtitle are displayed
     height: 80vw;
   }
 }
+
