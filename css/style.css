@@ -26,9 +26,11 @@ This is also where the orbit path is displayed
 */
 
 .orbit-wrapper {
-  margin-left: 320px;
+  margin-left: 25%;
+  margin-right: auto;
+  margin-top: 0;
   flex: 1; /* grow */
-  position: fixed; /* fixed to the right */
+  position: relative; /* fixed to the right */
   width: calc(100vw - 320px);
   height: 100vh;
   display: flex;
@@ -37,6 +39,9 @@ This is also where the orbit path is displayed
 }
 
 .orbit-center {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
   position: flex;
   /* top: 50%;
   left: 50%; */
@@ -46,13 +51,13 @@ This is also where the orbit path is displayed
 }
 
 .orbit-center h1 {
+  position: relative;
   font-size: auto;
-  margin: 0;
 }
 
 .orbit-center p {
+  position: relative;
   font-size: auto;
-  margin: 8px 0;
 }
 .orbit-center span {
   font-size: auto;
@@ -322,3 +327,25 @@ svg {
   }
 }
 
+@media (min-width: 2560px) {
+  .left-block {
+    width: 20%;
+  }
+  .orbit-wrapper {
+    width: 80%;
+    height: 100vh;
+  }
+
+  .orbit-center h1 {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 3rem;
+  }
+
+  .orbit-center p {
+    font-size: 1.5rem;
+  }
+}
+  
