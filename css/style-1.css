@@ -20,6 +20,21 @@ body {
   width: 100%;
   height: 100vh;
 }
+/* =============================================================
+Entire body background styling
+============================================================= */
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+@keyframes orbit {
+    to {
+        transform: rotate(360deg);
+    }
+}
 
 /*=============================================================
 Left Block Styling 
@@ -145,73 +160,6 @@ Left Block Styling
   from { border-right-color: transparent; }
   to { border-right-color: white; }
 }
-/* 
-.left-block {
-  position: relative;
-  flex: 0 0 25%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100vh;
-  padding: 2rem 1rem;
-  border-radius: 20px;
-  background: linear-gradient(180deg, rgba(106, 48, 147, 0.6), rgba(160, 68, 255, 0.6));
-  color: white;
-  overflow-y: auto;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.left-quote {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #ffffff;
-  text-align: justify;
-  max-width: 65ch;
-  margin: 0 auto;
-}
-.left-block::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url('assets/img/background-images/twinkling-stars.svg') no-repeat center/cover;
-  opacity: 0.15;
-  pointer-events: none;
-  z-index: 0;
-} */
-
-/* A short cosmic story styling */
-/* .subtitle {
-  font-size: 1.5rem;
-  font-weight: 300;
-  color: #ffd369;
-  margin-bottom: 0.5rem;
-  text-align: center;
-  text-shadow: 0 0 10px rgba(255, 211, 105, 0.5);
-  text-transform: sentence-case;
-  animation: typewriter 4s steps(40, end), blink 0.5s step-end infinite alternate;
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 2px solid white;
-}
-  @keyframes typewriter {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
-
-  @keyframes blink {
-    from {
-      border-right-color: transparent;
-    }
-    to {
-      border-right-color: white;
-    }
-  } */
 
 /* ==============================================================
 Right Block Styling
