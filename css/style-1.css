@@ -21,35 +21,7 @@ body {
   height: 100vh;
 }
 
-/* 
-.stars-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  opacity: 0.1;
-  pointer-events: none;
-}
-
-.star {
-  fill: #d0d0ff;
-  opacity: 0.1;
-  width: 2px;
-  height: 2px;
-  background-image: url('assets/img/background-images/twinkling-stars.svg');
-  background-size: cover;
-  animation: twinkle 3s infinite ease-in-out;
-}
-
-@keyframes twinkle {
-  0%, 100% { opacity: 0.1; }
-  50% { opacity: 0.5; }
-}
-*/
-
-/* 
-
-
-=============================================================
+/*=============================================================
 Left Block Styling 
 =============================================================*/
 
@@ -88,7 +60,7 @@ Left Block Styling
   z-index: 0;
 }
 
-
+/* A short cosmic story styling */
 .subtitle {
   font-size: 1.5rem;
   font-weight: 300;
@@ -140,7 +112,7 @@ Orbit Area Styling
   height: 100%;
   width: 100%;
 }
-
+/* Chaitra S and sub content styling */
 .orbit-center {
   position: absolute;
   top: 50%;
@@ -158,7 +130,8 @@ Orbit Area Styling
   font-size: 1rem;
   margin: 0.2rem 0;
 }
-/* orbiting-body is for the star*/
+
+/* orbiting-body is the animated moon ID.*/
 .orbit-path {
   width: 100%;
   height: auto;
@@ -187,7 +160,9 @@ Orbit Area Styling
   border-radius: 50%;
 }
 
-/* Planet Styling */
+/*==========================================================
+Planet Styling 
+============================================================*/
 .planet-container {
   position: absolute;
   top: 0;
@@ -209,8 +184,8 @@ Orbit Area Styling
 }
 
 .planet-link img {
-  width: clamp(10rem, 8vw, 100px);
-  height: clamp(10rem, 8vw, 100px);
+  width: clamp(10px, 6vw, 100px);
+  height: clamp(10px, 6vw, 100px);
   transition: transform 0.3s ease;
 }
 .planet-link img:hover {
@@ -228,31 +203,153 @@ Orbit Area Styling
   transform: scale(1.1);
 }
 
-/* Responsive Design */
+/*==================================================================
+ Responsive Design 
+ ===================================================================*/
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  .left-block {
+    flex: 0 0 35%; /* Give left block a bit more space on tablets */
+  }
+}
+
+
+ /* Small devices (landscape phones, tablets in portrait, 768px and down) */
 @media (max-width: 768px) {
+  body {
+    padding: 0.5rem; /* Reduce body padding on smaller screens */
+  }
+  .container {
+    flex-direction: column; /* Stack left and right blocks */
+    /* height: auto; Allow container to grow as needed */
+  }
+
+  .left-block {
+    flex: 1 1 100%; /* Make left block take full width */
+    width: 100%;
+    height: auto; /* Adjust height automatically */
+    min-height: auto; /* Reset min-height or set a smaller one if needed */
+    padding: 1.5rem 1rem;
+    margin-bottom: 1rem; /* Add space between stacked blocks */
+    /* overflow-y: visible; /* Or auto, depending on desired behavior */
+  }
+
+  .left-quote {
+    font-size: 1rem;
+    max-width: 90%; /* Allow text to use more of the width */
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+    /* animation: none; /* Optionally disable typewriter on mobile if it causes issues */
+    /* white-space: normal; /* Allow wrapping if text is long */
+    /* border-right: none; */
+    /* overflow: visible; */
+  }
+  /* If keeping typewriter on mobile and it might overflow, consider this: */
+  .subtitle-wrapper { /* You'd need to wrap .subtitle in a div with this class */
+      width: 100%;
+      overflow: hidden; /* This parent div would handle the overflow for the nowrap subtitle */
+      text-align: center; /* Re-center if subtitle is inline-block */
+  }
+
+
   .orbit-wrapper {
-    height: 500px;
+    flex: 1 1 100%; /* Make orbit wrapper take full width */
+    width: 100%;
+    height: 60vh; /* Fixed height for orbit area on mobile, adjust as needed */
+    /* Or use a fixed pixel height like 500px if vh is problematic */
+    /* height: 500px; */
+    min-height: 350px; /* Ensure it's not too small */
   }
-  .planet-link img {
-    width: 40px;
-    height: 40px;
-  }
+
   .orbit-center h1 {
     font-size: 1.6rem;
   }
   .orbit-center p {
     font-size: 0.9rem;
   }
-}
 
-@media (max-width: 480px) {
-  .left-quote {
-    font-size: 1rem;
-  }
-  .subtitle {
-    font-size: 1.2rem;
+  .planet-link img {
+    width: clamp(35px, 10vw, 60px); /* Adjust planet sizes for mobile */
+    height: clamp(35px, 10vw, 60px);
   }
   .planet-link span {
     font-size: 0.8rem;
   }
+
+  .orbiting-body {
+    width: 15px;
+    height: 15px;
+  }
+  .orbiting-body::after {
+    width: 20px;
+    height: 3px;
+  }
+}
+
+/* Extra small devices (phones, 480px and down) */
+@media (max-width: 480px) {
+  body {
+    padding: 0.5rem 0.25rem; /* Further reduce padding */
+  }
+  .left-block {
+    padding: 1rem 0.75rem;
+  }
+  .left-quote {
+    font-size: 0.9rem; /* Slightly smaller text for very small screens */
+  }
+  .subtitle {
+    font-size: 1.1rem; /* Smaller subtitle */
+  }
+
+  .orbit-wrapper {
+    height: 55vh; /* Can adjust height again for smallest screens */
+    /* height: 400px; */
+    min-height: 300px;
+  }
+
+  .orbit-center h1 {
+    font-size: 1.4rem;
+  }
+  .orbit-center p {
+    font-size: 0.8rem;
+  }
+
+  .planet-link img {
+    width: clamp(30px, 12vw, 50px); /* Further adjust planet sizes */
+    height: clamp(30px, 12vw, 50px);
+  }
+  .planet-link span {
+    font-size: 0.75rem;
+  }
+
+  .orbiting-body {
+    width: 12px;
+    height: 12px;
+    box-shadow: 0 0 6px 3px rgba(255, 255, 150, 0.6);
+  }
+  .orbiting-body::after { /* Smaller tail for smaller moon */
+    width: 15px;
+    height: 2px;
+  }
+}
+
+/* Very small devices, optional adjustments */
+@media (max-width: 360px) {
+    .left-quote {
+        font-size: 0.85rem;
+    }
+    .subtitle {
+        font-size: 1rem;
+    }
+    .orbit-center h1 {
+        font-size: 1.3rem;
+    }
+    .orbit-center p {
+        font-size: 0.75rem;
+    }
+    .planet-link span {
+      font-size: 0.7rem;
+    }
 }
