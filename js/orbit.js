@@ -1,26 +1,33 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const centerEl = document.querySelector(".orbit-center");
+
+function placePlanetsOnEllipse() {
+  const ellipse = document.getElementById("orbit-ellipse");
   const planets = document.querySelectorAll(".planet-link");
 
-  function placePlanetsInCircle() {
-    const centerBox = centerEl.getBoundingClientRect();
-    const centerX = centerBox.left + centerBox.width / 2;
-    const centerY = centerBox.top + centerBox.height / 2;
+  if (!ellipse || planets.length === 0) return;
 
-    const radius = 200; // Distance from center to each planet
-    const total = planets.length;
+  const cx = parseFloat(ellipse.getAttribute("cx"));
+  const cy = parseFloat(ellipse.getAttribute("cy"));
+  const rx = parseFloat(ellipse.getAttribute("rx"));
+  const ry = parseFloat(ellipse.getAttribute("ry"));
 
-    planets.forEach((planet, i) => {
-      const angle = (2 * Math.PI * i) / total;
+  const total = planets.length;
 
-      const x = centerX + radius * Math.cos(angle);
-      const y = centerY + radius * Math.sin(angle);
+  planets.forEach((planet, i) => {
+    const angle = (2 * Math.PI * i) / total;
 
-      planet.style.left = `${x - planet.offsetWidth / 2}px`;
-      planet.style.top = `${y - planet.offsetHeight / 2}px`;
-    });
-  }
+    const x = cx + rx * Math.cos(angle);
+    const y = cy + ry * Math.sin(angle);
 
-  window.addEventListener("resize", placePlanetsInCircle);
-  placePlanetsInCircle();
+    planet.style.left = `${x}px`;
+    planet.style.top = `${y}px`;
+    planet.style.transform = "translate(-50%, -50%)";
+  });
+}
+
+// Trigger on load and resize
+window.addEventListener("load", placePlanetsOnEllipse);
+window.addEventListener("resize", () => {
+  resizeEllipse();
+  placePlanetsOnEllipse();
 });
+

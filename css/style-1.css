@@ -21,47 +21,126 @@ body {
   height: 100vh;
 }
 
-/* Left Block Styling */
+/* 
+.stars-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.star {
+  fill: #d0d0ff;
+  opacity: 0.1;
+  width: 2px;
+  height: 2px;
+  background-image: url('assets/img/background-images/twinkling-stars.svg');
+  background-size: cover;
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.5; }
+}
+*/
+
+/* 
+
+
+=============================================================
+Left Block Styling 
+=============================================================*/
+
+
 .left-block {
+  position: relative;
   flex: 0 0 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 100vh;
   padding: 2rem 1rem;
-  margin: auto 1rem;
   border-radius: 20px;
-  background: linear-gradient(180deg, #6a3093cc, #a044ffcc); /* <-- cc = 80% opacity */
+  background: linear-gradient(180deg, rgba(106, 48, 147, 0.6), rgba(160, 68, 255, 0.6));
   color: white;
   overflow-y: auto;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
-/* ✅ Normal subtitle */
-.subtitle {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #ffd369;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-/* ✅ Normal quote text */
 .left-quote {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   line-height: 1.6;
   color: #ffffff;
   text-align: justify;
+  max-width: 65ch;
+  margin: 0 auto;
+}
+.left-block::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('assets/img/background-images/twinkling-stars.svg') no-repeat center/cover;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
 }
 
 
-/* Orbit Area Styling */
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #ffd369;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(255, 211, 105, 0.5);
+  text-transform: sentence-case;
+  animation: typewriter 4s steps(40, end), blink 0.5s step-end infinite alternate;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid white;
+}
+  @keyframes typewriter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink {
+    from {
+      border-right-color: transparent;
+    }
+    to {
+      border-right-color: white;
+    }
+  }
+
+/* ==============================================================
+Right Block Styling
+Orbit Area Styling 
+===================================================================*/
 .orbit-wrapper {
   flex: 1;
   position: relative;
   height: 100vh;
+  width: 100%;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
+
+.orbit-path {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
 .orbit-center {
   position: absolute;
   top: 50%;
@@ -72,26 +151,40 @@ body {
 }
 .orbit-center h1 {
   font-size: 2rem;
+  color: #ffd369;
   margin-bottom: 0.5rem;
 }
 .orbit-center p {
   font-size: 1rem;
   margin: 0.2rem 0;
 }
-
+/* orbiting-body is for the star*/
 .orbit-path {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
+  width: 100%;
+  height: auto;
+  display: block;
 }
+
 .orbiting-body {
-  position: absolute;
   width: 20px;
   height: 20px;
-  background: white;
+  background: radial-gradient(circle, #fffacd, #ffd700); /* moon-like */
   border-radius: 50%;
-  z-index: 3;
+  position: absolute;
+  z-index: 10;
+  box-shadow: 0 0 10px 5px rgba(255, 255, 150, 0.6);
+  transform: translate(-50%, -50%);
+}
+.orbiting-body::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 5px;
+  background: linear-gradient(to left, rgba(255,255,255,0.5), transparent);
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  border-radius: 50%;
 }
 
 /* Planet Styling */
@@ -101,23 +194,35 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+  pointer-events: none;
 }
+
 .planet-link {
   position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  pointer-events: auto;
+  gap: 0.2rem;
+  transition: transform 0.3s;
+}
+
+.planet-link img {
+  width: clamp(10rem, 8vw, 100px);
+  height: clamp(10rem, 8vw, 100px);
   transition: transform 0.3s ease;
 }
-.planet-link img {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 0.3rem;
+.planet-link img:hover {
+  transform: scale(1.2);
 }
+
 .planet-link span {
   font-size: 0.9rem;
-  color: #fff;
+  color: #ffd369;
+  margin-top: 0.5rem;
+  gap: 0.2rem;
+  
 }
 .planet-link:hover {
   transform: scale(1.1);
