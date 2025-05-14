@@ -25,7 +25,127 @@ body {
 Left Block Styling 
 =============================================================*/
 
+.left-block {
+  position: relative;
+  flex: 0 0 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 300px;
+  padding: 2rem 1rem;
+  border-radius: 20px;
+  /* Updated background for animation */
+  background: linear-gradient(180deg, rgba(106, 48, 147, 0.7) 0%, rgba(160, 68, 255, 0.7) 50%, rgba(106, 48, 147, 0.7) 100%);
+  background-size: 100% 250%; /* Make gradient taller than the block for vertical flow */
+  color: white;
+  overflow-y: auto;
+  /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Replaced by animation */
+  z-index: 1;
 
+  /* Apply new animations */
+  animation:
+    flowGradient 20s ease-in-out infinite, /* Slow flowing gradient */
+    pulseGlow 3.5s ease-in-out infinite;    /* Moderate pulsating glow */
+}
+
+.left-quote {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ffffff;
+  text-align: justify;
+  max-width: 65ch;
+  margin: 0 auto;
+  position: relative; /* Ensure text is above the ::before pseudo-element if needed */
+  z-index: 1; /* Ensure text is above the ::before pseudo-element */
+}
+
+.left-block::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* Cover the entire block */
+  border-radius: 20px; /* Match parent's border-radius */
+  background: url(../assets/img/background-images/nebula.jpg) no-repeat center/cover;
+  /* opacity: 0.15; /* Replaced by animation */
+  pointer-events: none;
+  z-index: 0; /* Behind the content like the quote */
+
+  /* Apply new star twinkle animation */
+  animation: starTwinkle 8s ease-in-out infinite;
+}
+
+/* A short cosmic story styling */
+.subtitle-wrapper {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    position: relative; /* Ensure text is above the ::before pseudo-element if needed */
+    z-index: 1; /* Ensure text is above the ::before pseudo-element */
+}
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #ffd369;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(255, 211, 105, 0.5);
+  text-transform: capitalize;
+  animation: typewriter 4s steps(40, end), blink 0.5s step-end infinite alternate;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid white;
+  max-width: 100%;
+  /* position: relative; z-index: 1; Added to parent wrapper */
+}
+
+/*==========================================================
+  Animation Keyframes for Effects
+============================================================*/
+
+/* For flowing gradient background on .left-block */
+@keyframes flowGradient {
+  0% { background-position: 50% 0%; }
+  50% { background-position: 50% 100%; }
+  100% { background-position: 50% 0%; }
+}
+
+/* For pulsating glow on .left-block */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2), /* Base shadow */
+                0 0 15px rgba(160, 68, 255, 0.3), /* Lighter purple glow */
+                0 0 25px rgba(106, 48, 147, 0.2); /* Darker purple glow */
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3), /* Base shadow slightly enhanced */
+                0 0 25px rgba(160, 68, 255, 0.5), /* Lighter purple glow intensified */
+                0 0 35px rgba(106, 48, 147, 0.35); /* Darker purple glow intensified */
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2),
+                0 0 15px rgba(160, 68, 255, 0.3),
+                0 0 25px rgba(106, 48, 147, 0.2);
+  }
+}
+
+/* For star twinkle on .left-block::before */
+@keyframes starTwinkle {
+  0% { opacity: 0.1; }
+  33% { opacity: 0.25; } /* Brighter twinkle */
+  66% { opacity: 0.05; } /* Dimmer twinkle */
+  100% { opacity: 0.1; }
+}
+
+/* Typewriter and Blink keyframes (already existing, ensure they are present) */
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+@keyframes blink {
+  from { border-right-color: transparent; }
+  to { border-right-color: white; }
+}
+/* 
 .left-block {
   position: relative;
   flex: 0 0 25%;
@@ -58,10 +178,10 @@ Left Block Styling
   opacity: 0.15;
   pointer-events: none;
   z-index: 0;
-}
+} */
 
 /* A short cosmic story styling */
-.subtitle {
+/* .subtitle {
   font-size: 1.5rem;
   font-weight: 300;
   color: #ffd369;
@@ -91,7 +211,7 @@ Left Block Styling
     to {
       border-right-color: white;
     }
-  }
+  } */
 
 /* ==============================================================
 Right Block Styling
@@ -304,7 +424,7 @@ Planet Styling
   }
 
   .orbit-wrapper {
-    height: 55vh; /* Can adjust height again for smallest screens */
+    height: 50vh; /* Can adjust height again for smallest screens */
     /* height: 400px; */
     min-height: 300px;
   }
@@ -317,8 +437,8 @@ Planet Styling
   }
 
   .planet-link img {
-    width: clamp(30px, 12vw, 50px); /* Further adjust planet sizes */
-    height: clamp(30px, 12vw, 50px);
+    width: clamp(50px, 12vw, 50px); /* Further adjust planet sizes */
+    height: clamp(50px, 12vw, 50px);
   }
   .planet-link span {
     font-size: 0.75rem;
