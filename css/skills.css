@@ -179,5 +179,26 @@ header input {
 
   .skill-card img {
     width: auto;
+    height: auto;
+    margin-bottom: 0.5rem;
+  }
+    .skill-card {
+        flex: 1 1 100%;
+        max-width: 90%;
+    }
+    .skill-card p {
+        font-size: 0.8rem;
+    }
+
+}
+
+@media (max-width: 480px) {
+  header input {
+    width: 100%;
+  }
+
+  .skill-card img {
+    width: 5rem;
+    height: auto;
   }
 }
