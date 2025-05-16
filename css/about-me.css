@@ -1,0 +1,94 @@
+/* Base styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(90deg, #2b1055, #7597de);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 2rem;
+  overflow-x: hidden;
+}
+
+/* Container Flex Layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Section Styling */
+section {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+h1, h2 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+p, li {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li::before {
+  content: "🌟 ";
+  margin-right: 0.5rem;
+}
+
+/* Responsive Links/Icons */
+.connect img {
+  height: 30px;
+  margin: 0 10px;
+  transition: transform 0.2s ease;
+}
+
+.connect img:hover {
+  transform: scale(1.2);
+}
+
+/* Responsive scaling for large displays */
+@media (min-width: 2560px) {
+  body {
+    font-size: 1.3rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.3rem;
+  }
+
+  .container {
+    padding: 3rem 6rem;
+  }
+
+  .connect img {
+    height: 40px;
+  }
+}
