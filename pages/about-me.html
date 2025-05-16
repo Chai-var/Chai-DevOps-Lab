@@ -53,11 +53,35 @@
       <h2> Let’s Connect</h2>
       <p>I'm always open to opportunities to collaborate, innovate, and learn.</p>
       <p>
-         <a href="chaitra.srinivas610@gmail.com"><img src="../assets/img/contact-me/mailbox-2.png" alt="E mail contact"></a> |
+         <a href="mailto:chaitra.srinivas610@gmail.com"><img src="../assets/img/contact-me/mailbox-4.webp" alt="E mail contact"></a> |
          <a href="https://www.linkedin.com/in/chaitrasrinivas-cs/"><img src="../assets/img/contact-me/linkedin-2.png" alt="Linkedin"></a> |
-         <a href="https://github.com/Chai-var"><img src="../assets/img/contact-me/github-logo-1.png" alt="GitHub"></a>
+         <a href="https://github.com/Chai-var"><img src="../assets/img/contact-me/github-logo-2.png" alt="GitHub"></a>
       </p>
     </section>
   </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll("section");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add("visible");
+    });
+  }, { threshold: 0.1 });
+
+  sections.forEach(section => observer.observe(section));
+});
+
+  </script>
+  <a href="../index.html" class="home-btn">← Home</a>
+  <!-- <button id="topBtn"><a href="../index.html" alt="home-button"><span>Home</span></a></button> -->
+  <!-- <script>
+    window.onscroll = () => {
+  const btn = document.getElementById("topBtn");
+  btn.style.display = window.scrollY > 300 ? "block" : "none";
+};
+
+document.getElementById("topBtn").onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
+  </script> -->
 </body>
 </html>
