@@ -1,0 +1,25 @@
+<svg width="100%" height="100%" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <style>
+    .star {
+      fill: white;
+      opacity: 0.5;
+      animation: twinkle 2s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+  </style>
+
+  <!-- Generate multiple stars -->
+  <circle class="star" cx="100" cy="150" r="1.5"/>
+  <circle class="star" cx="200" cy="300" r="1.2"/>
+  <circle class="star" cx="400" cy="120" r="1.7"/>
+  <circle class="star" cx="600" cy="400" r="1.3"/>
+  <circle class="star" cx="720" cy="100" r="1.6"/>
+  <circle class="star" cx="50" cy="500" r="1.4"/>
+  <circle class="star" cx="320" cy="350" r="1.5"/>
+  <circle class="star" cx="700" cy="250" r="1.1"/>
+  <circle class="star" cx="250" cy="520" r="1.8"/>
+</svg>

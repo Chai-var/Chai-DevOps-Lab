@@ -1,64 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chai DevOps Lab</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style-1.css">
 </head>
 <body>
-  <div class="orbit-wrapper">
-    <div class="center-content">
-      <h1>Chaitra S</h1>
-      <p>Automating Deployments</p>
-      <p>Securing Pipelines</p>
-      <p>Scaling Infrastructure</p>
+  <div class="container">
+    <div class="left-block">
+        <!-- <svg class="stars-bg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+          <circle class="star" cx="100" cy="150" r="1.5"/>
+          <circle class="star" cx="200" cy="300" r="1.2"/>
+          <circle class="star" cx="400" cy="120" r="1.7"/>
+          <circle class="star" cx="600" cy="400" r="1.3"/>
+          <circle class="star" cx="720" cy="100" r="1.6"/>
+          <circle class="star" cx="50" cy="500" r="1.4"/>
+          <circle class="star" cx="320" cy="350" r="1.5"/>
+          <circle class="star" cx="700" cy="250" r="1.1"/>
+          <circle class="star" cx="250" cy="520" r="1.8"/>
+        </svg> -->
+      <div class="subtitle">A Short Cosmic Story</div>
+
+      <p class="left-quote">
+        "Welcome to my DevOps-Verse — a universe where code, tools, and teams orbit in harmony. To me, DevOps isn’t just a practice; it’s a gravitational force that aligns scattered constellations of development, testing, delivery, and operations into a single stellar system.
+        <br><br>
+        Even when space-time ripples — broken builds, failed deployments, or system overloads — DevOps strategies like rollbacks and automated healing bring the universe back into balance. It’s this dynamic yet resilient flow that fuels every project’s journey from idea nebula to production stardust."
+      </p>
     </div>
 
-    <a href="pages/about-me.html" class="planet-link about">
-      <img src="assets/img/mars-1.png" alt="About Me" />
-      <span>About Me</span>
-    </a>
-    <a href="Chaitra-S-CV.pdf" class="planet-link resume">
-      <img src="assets/img/earth-1.png" alt="Resume" />
-      <span>Resume</span>
-    </a>
-    <a href="pages/skills.html" class="planet-link skills">
-      <img src="assets/img/saturn-1.png" alt="Skills" />
-      <span>Skills</span>
-    </a>
-    <a href="pages/projects.html" class="planet-link projects">
-      <img src="assets/img/venus-1.png" alt="Projects" />
-      <span>Projects</span>
-    </a>
-    <a href="pages/certifications.html" class="planet-link certifications">
-      <img src="assets/img/mercury-1.png" alt="Certifications" />
-      <span>Certifications</span>
-    </a>
-    <a href="pages/blogs.html" class="planet-link blogs">
-      <img src="assets/img/jupiter-1.png" alt="Blogs" />
-      <span>Blogs</span>
-    </a>
-<div class="container galaxy-bg">
-  <div class="left-block galaxy-accent">
-    <div class="subtitle">Short Cosmic Story, an Intro to my DevOps philosophy</div>
-    <p class="left-quote">
-      "Welcome to my DevOps-Verse — a universe where code, tools, and teams orbit in harmony. To me, DevOps isn’t just a practice; it’s a gravitational force that aligns scattered constellations of development, testing, delivery, and operations into a single stellar system.
-      <br><br>
-      Even when space-time ripples — broken builds, failed deployments, or system overloads — DevOps strategies like rollbacks and automated healing bring the universe back into balance. It’s this dynamic yet resilient flow that fuels every project’s journey from idea nebula to production stardust."
-    </p>
-  </div>
+    <div class="orbit-wrapper">
+      <div class="orbit-center">
+        <h1>Chaitra S</h1>
+        <p>Automating Deployments</p>
+        <p>Securing Pipelines</p>
+        <p>Scaling Infrastructure</p>
+      </div>
 
-  <div class="orbit-wrapper">
-    <!-- Center and planets go here (as before) -->
-  </div>
-</div>
+    <svg id="orbit" class="orbit-path" preserveAspectRatio="none">
+      <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+      <g>
+        <ellipse id="orbit-ellipse" cx="50%" cy="50%" rx="0" ry="0" stroke="#a044ffcc" stroke-width="6 " fill="none" filter="url(#glow)" />
+      </g>
+    </svg>
 
-    <div class="orbit-ellipse">
-      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-        <ellipse cx="50" cy="50" rx="48" ry="30" />
-      </svg>
+<script>
+  function resizeEllipse() {
+    const orbitSVG = document.getElementById("orbit");
+    const ellipse = document.getElementById("orbit-ellipse");
+    const wrapper = document.querySelector(".orbit-wrapper");
+
+    const width = wrapper.clientWidth;
+    const height = wrapper.clientHeight;
+
+    // Set SVG canvas size
+    orbitSVG.setAttribute("width", width);
+    orbitSVG.setAttribute("height", height);
+    orbitSVG.setAttribute("viewBox", `0 0 ${width} ${height}`);
+
+    // Ellipse radii with padding
+    const paddingX = 40;
+    const paddingY = 40;
+    const rx = (width / 2) - paddingX;
+    const ry = (height / 2) - paddingY;
+
+    ellipse.setAttribute("cx", width / 2);
+    ellipse.setAttribute("cy", height / 2);
+    ellipse.setAttribute("rx", rx);
+    ellipse.setAttribute("ry", ry);
+
+    // Rotate around center
+    const centerX = width / 2;
+    const centerY = height / 2;
+    const group = ellipse.parentNode;
+    group.setAttribute("transform", `rotate(-18 ${centerX} ${centerY})`);
+  }
+
+  window.addEventListener("load", resizeEllipse);
+  window.addEventListener("resize", resizeEllipse);
+</script>
+
+      <div class="orbiting-body" id="orbiting-moon"></div>
+      <div class="planet-container">
+        <div class="planet-link"><a href="pages\about-me.html"><img src="assets/img/planets/mars-1.png" alt="About Me"></a><span>About Me</span></div>
+        <div class="planet-link"><img src="assets/img/planets/earth-1.png" alt="Resume"><span>Blogs</span></div>
+        <div class="planet-link"><img src="assets/img/planets/saturn-1.png" alt="Skills"><span>Certification</span></div>
+        <div class="planet-link"><img src="assets/img/planets/venus-1.png" alt="Projects"><span>Projects</span></div>
+        <div class="planet-link"><a href="pages/skills.html"><img src="assets/img/planets/mercury-1.png" alt="Certifications"></a><span>Skills</span></div>
+        <div class="planet-link"><a href="assets/resume/Chaitra-S-2025.pdf"><img src="assets/img/planets/jupiter-1.png" alt="Blogs"></a><span>Resume</span></div>
+      </div>
     </div>
   </div>
+
+
+  <script src="js/orbit.js"></script>
+  <script src="js/moon.js"></script>
+  <script src="js/stars-body.js"></script>
 </body>
 </html>

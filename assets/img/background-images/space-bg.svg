@@ -1,0 +1,45 @@
+<svg class="space-bg" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="nebulaGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a044ff" stop-opacity="0.4">
+        <animate attributeName="stop-opacity" values="0.4;0.2;0.4" dur="8s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="70%" stop-color="#6a3093" stop-opacity="0.2">
+        <animate attributeName="stop-opacity" values="0.2;0.05;0.2" dur="10s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <style>
+      .star {
+        fill: white;
+        opacity: 0.3;
+        animation: twinkle 2s infinite ease-in-out;
+      }
+
+      @keyframes twinkle {
+        0%, 100% { opacity: 0.2; }
+        50% { opacity: 1; }
+      }
+    </style>
+  </defs>
+
+  <!-- Nebula shapes -->
+  <circle cx="300" cy="200" r="250" fill="url(#nebulaGradient)">
+    <animateTransform attributeName="transform" type="rotate" from="0 300 200" to="360 300 200" dur="60s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="600" cy="400" r="300" fill="url(#nebulaGradient)">
+    <animateTransform attributeName="transform" type="rotate" from="0 600 400" to="-360 600 400" dur="90s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Stars -->
+  <circle class="star" cx="100" cy="150" r="1.5"/>
+  <circle class="star" cx="200" cy="300" r="1.2"/>
+  <circle class="star" cx="400" cy="120" r="1.7"/>
+  <circle class="star" cx="600" cy="400" r="1.3"/>
+  <circle class="star" cx="720" cy="100" r="1.6"/>
+  <circle class="star" cx="50" cy="500" r="1.4"/>
+  <circle class="star" cx="320" cy="350" r="1.5"/>
+  <circle class="star" cx="700" cy="250" r="1.1"/>
+  <circle class="star" cx="250" cy="520" r="1.8"/>
+</svg>

@@ -1,22 +1,77 @@
+/* -----------------------------
+   GLOBAL BASE STYLES
+----------------------------- */
 body {
   margin: 0;
   font-family: 'Oswald', sans-serif;
   background: radial-gradient(ellipse at center, #0f0c29 0%, #24243e 100%);
   color: #e0e0f0;
-  overflow: hidden;
-  height: 100vh;
+  overflow-x: fixed;
+  display: flex;
+  min-height: 100vh;
 }
 
 .container {
   display: flex;
-  height: 100vh;
-  width: 100vw;
-  margin-left: 320px; /* match left block width */
+  flex-wrap: wrap;
+  width: 90%;
+  height: 1200px;
+  overflow: hidden;
 }
 
+/* 
+The right block of screen
+This is where the planets are displayed
+This is also where the orbit path is displayed
+*/
 
+.orbit-wrapper {
+  margin-left: 25%;
+  margin-right: auto;
+  margin-top: 0;
+  flex: 1; /* grow */
+  position: relative; /* fixed to the right */
+  width: calc(100vw - 320px);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.orbit-center {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  position: flex;
+  /* top: 50%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  text-align: center;
+  z-index: 2;
+}
+
+.orbit-center h1 {
+  position: relative;
+  font-size: auto;
+}
+
+.orbit-center p {
+  position: relative;
+  font-size: auto;
+}
+.orbit-center span {
+  font-size: auto;
+  font-weight: 400;
+  color: #fff;
+}
+
+/* 
+The Left block of the screen
+This is where the quote and subtitle are displayed
+*/
 .left-block {
   position: fixed;
+  flex: 0.3;
   top: 0;
   left: 0;
   width: 250px; /* slightly more space for text if needed */
@@ -33,80 +88,75 @@ body {
   font-style: italic;
   text-align: center;
   line-height: 1.8;
-  max-width: 240px;
+  max-width: auto;
   animation: fadeInQuote 2s ease forwards;
   opacity: 0;
 }
-
 @keyframes fadeInQuote {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
-.about-me h2 {
-  font-size: 22px;
-  margin-bottom: 10px;
-  color: #ffffff;
-}
-
-.about-me p {
-  font-size: 15px;
-  line-height: 1.6;
-  color: #e0d8f9;
-}
 .subtitle {
-  font-size: 16px;
+  
+  font-size: 20px;
   font-weight: 600;
   margin-bottom: 15px;
   color: #ffffff;
 }
-
-/* Adjust orbit-wrapper now that it's inside container */
-
-.orbit-wrapper {
-  flex-grow: 1;
-  position: relative;
-  padding-left: 100px; /* Shift orbit away from quote block */
-}
-
-.center-content {
-  position: absolute;
-  top: 50%;
-  left: 55%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 3;
-}
-
-
-.center-content h1 {
-  font-size: 36px;
-  margin: 5px 10px;
-  text-align: center;
-}
-
-.center-content p {
-  font-size: 18px;
-  margin: 5px 10px;
-}
-
-.planet-link {
-  position: absolute;
+/* 
+SVG flexbox styling
+*/
+.svg-container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  text-decoration: none;
-  color: white;
-  z-index: 3;
+  width: 100%;
+  height: auto;
+}
+svg {
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 600px) {
+  .svg-container svg {
+    width: 80%;
+  }
+}
+
+@media (max-width: 400px) {
+  .svg-container svg {
+    width: 100%;
+  }
+}
+
+
+/* -----------------------------
+   PLANETS AND ORBIT PATH
+----------------------------- */
+.planet-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.planet-link {
+  width: 100px;
+  height: auto;
+  text-align: center;
+  z-index: 5;
+  pointer-events: auto;
 }
 
 .planet-link img {
-  width: 200px;
+  width: 100%;
   height: auto;
   transition: transform 0.3s ease;
 }
 
 .planet-link span {
+  margin-top: 3px;
+  display: relative;
   font-size: 14px;
   color: #fff;
 }
@@ -115,112 +165,187 @@ body {
   transform: scale(1.1);
 }
 
-/* Planet positions around center */
-.planet-link.about         { top: 25%; left: 30%; }
-.planet-link.resume        { top: 0%; left: 55%; }
-.planet-link.skills        { top: 10%; left: 85%; }
-.planet-link.projects      { bottom: 20%; left: 70%; }
-.planet-link.certifications { bottom: 0%; left: 45%; }
-.planet-link.blogs         { bottom: 10%; left: 18%; }
-
-
-
-/* Orbit ellipse SVG styling */
-.orbit-ellipse {
-  position: fixed;
-  top: 50%;
-  left: 57%;
-  width: 75vw;
-  height: 100vh;
-  transform: translate(-50%, -50%) rotate(-25deg);
+.orbit-path {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 1;
   pointer-events: none;
 }
 
-.orbit-ellipse svg {
-  width: 100%;
-  height: 100%;
+.orbit-path ellipse {
+  stroke: rgba(160, 68, 255, 0.6);
+  stroke-width: 10;
   fill: none;
-  stroke: rgba(160, 68, 255, 0.7); /* Glowing purple */
-  stroke-width: 1.3;
-  filter: drop-shadow(0 0 6px rgba(160, 68, 255, 0.5));
+  filter: drop-shadow(0 0 14px rgba(160, 68, 255, 0.6));
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
+/* -----------------------------
+   MOON/STAR ORBITING BODY
+----------------------------- */
+.orbiting-body {
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, #fffacd, #ffd700); /* moon-like */
+  border-radius: 50%;
+  position: absolute;
+  z-index: 10;
+  box-shadow: 0 0 10px 5px rgba(255, 255, 150, 0.6);
+  transform: translate(-50%, -50%);
+}
+.orbiting-body::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 5px;
+  background: linear-gradient(to left, rgba(255,255,255,0.5), transparent);
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+
+
+/* -----------------------------
+   MOBILE RESPONSIVENESS
+----------------------------- */
+@media (max-width: 1280px) {
   body {
-    overflow-y: fixed;
+    flex-direction: column;
     overflow-x: hidden;
-    height: auto;
   }
 
   .container {
     flex-direction: column;
-    margin-left: 0;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem;
   }
 
   .left-block {
-    position: fixed;
-    width: 30%;
-    height: auto;
-    padding: 20px;
-    box-shadow: none;
+    width: 10%;
+    text-align: center;
+    padding: 1rem 0;
   }
-
-  .left-quote {
-  font-size: 12px;
-  font-style: italic;
-}
+  .left-quote{
+    font-size: auto;
+    font-style: italic;
+    line-height: auto;
+    margin-bottom: 1rem;
+  }
 
   .orbit-wrapper {
-    padding-left: 0;
-    margin-top: 20px;
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin-top: 2rem;
   }
 
-  .center-content {
-    position: absolute;
-    top: 50%;
-    left: 65%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 3;
+  .orbit-center h1 {
+    font-size: 1.3rem;
   }
 
-  .center-content h1 {
-    font-size: 15px;
+  .orbit-center p {
+    font-size: 1rem;
   }
 
-  .center-content p {
-    font-size: 8px;
+  .planet-link {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
   }
 
   .planet-link img {
-    width: 75px;
+    width: 36px;
+    height: 36px;
   }
 
-  .planet-link span {
-    font-size: 10px;
-  }
-
-  .orbit-ellipse {
+  .orbit-path {
     width: 80vw;
-    height: 40vh;
-    top: 40%;
-    left: 70%;
-    transform: translate(-50%, -50%) rotate(-45deg);
+    height: 80vw;
   }
 
-  .orbit-ellipse svg {
-    width: 100%;
-    height: 100%;
-    stroke-width: 1;
+  .orbiting-moon {
+    width: 10px;
+    height: 10px;
+  }
+}
+/* -----------------------------
+   Planet navigation for very small screens
+   (mobile)
+----------------------------- */
+
+@media (max-width: 480px) {
+  .planet-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 0.5rem;
+    justify-content: start;
+    scroll-snap-type: x mandatory;
   }
 
-  .planet-link.about         { top: 0%; left: 45%; }
-  .planet-link.resume        { top: 0%; left: 50%; }
-  .planet-link.skills        { top: 0%; left: 75%; }
-  .planet-link.projects      { bottom: 50%; left: 60%; }
-  .planet-link.certifications { bottom: 50%; left: 40%; }
-  .planet-link.blogs         { bottom: 50%; left: 15%; }
+  .planet-link {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
 }
 
+/* -----------------------------
+   Desktop view for mobile screens
+----------------------------- */
+@media screen and (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .left-block, .orbit-wrapper {
+    width: 100%;
+    max-width: 90%;
+    text-align: center;
+  }
+
+  .orbit-wrapper {
+    margin-top: 2rem;
+  }
+
+  .planet-link {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .orbit-path {
+    width: 80vw;
+    height: 80vw;
+  }
+}
+
+@media (min-width: 2560px) {
+  .left-block {
+    width: 20%;
+  }
+  .orbit-wrapper {
+    width: 80%;
+    height: 100vh;
+  }
+
+  .orbit-center h1 {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 3rem;
+  }
+
+  .orbit-center p {
+    font-size: 1.5rem;
+  }
+}
+  
