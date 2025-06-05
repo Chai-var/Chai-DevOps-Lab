@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certified DevOps Excellence 🌠 - Certificates</title>
+    <link rel="stylesheet" href="../css/cert.css">
+</head>
+<body>
+
+    <header>
+        <h1>Certified DevOps Excellence 🌠</h1>
+    </header>
+
+    <main>
+        <section class="certificates-section">
+            <article class="certificate-card">
+                <h2>GitHub Actions Certified</h2>
+                <p><strong>Issuer:</strong> GitHub</p>
+                <p><strong>Issue Date:</strong> June 2023</p>
+                <p><strong>Expiry:</strong> June 2026</p>
+
+                <div class="actions">
+                    <a href="../assets/certificates/GitHub_Actions_certification.pdf" class="button" download>View Certificate</a>
+                    <a href="https://www.credly.com/badges/2efcb5d3-d966-4bd2-9eea-649ad2adaf9f/public_url" class="credly-link">
+                        <img src="../assets/certificates/github-actions-badge.png" class="badge-image">
+                        View Badge on Credly
+                    </a>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>© <span id="currentYear"></span> · DevOps Engineer · one pipeline at a time</p>
+    </footer>
+
+    <script>
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+    </script>
+  <a href="../index.html" class="home-btn">← Home</a>
+  <script>
+    const input = document.getElementById("skillSearch");
+    input.addEventListener("input", () => {
+      const value = input.value.toLowerCase();
+      document.querySelectorAll(".skill-card").forEach(card => {
+        const match = card.dataset.skill.toLowerCase().includes(value);
+        card.style.display = match ? "flex" : "none";
+      });
+    });
+  </script>
+</body>
+</html>
