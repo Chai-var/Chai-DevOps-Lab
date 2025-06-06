@@ -1,0 +1,155 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0a192f;  /* Dark background */
+    color: #fff; /* Light text */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+    background-color: #172a45; /* Slightly lighter dark color */
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* Project Card Styles */
+.project-card {
+    background-color: rgba(128, 0, 128, 0.5); /* Dark purple with 50% transparency */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border for definition */
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* More pronounced shadow on hover */
+}
+
+.project-card .p-4 {
+    padding: 1rem;
+}
+
+.project-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #b39ddb; /* Lighter purple for titles */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add text shadow for depth */
+}
+
+.project-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #d1c4e9; /* Even lighter purple for client name */
+}
+
+/* Badge Styles */
+.badge {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white */
+    border-radius: 20px;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #bbdefb; /* Light blue for badge text */
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle badge border */
+}
+
+/* Button Styles */
+.view-more-button {
+    background-color: #673ab7; /* Deeper purple */
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+}
+
+.view-more-button:hover {
+    background-color: #512da8; /* Even darker purple on hover */
+}
+
+/* View More Content Styles */
+.view-more-content {
+    display: none;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.05); /* Slightly transparent white */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.view-more-content.active {
+    display: block;
+}
+
+.view-more-content p {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #e0e0e0; /* Light gray for detail titles */
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #172a45; /* Slightly lighter dark color */
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+}
+.home-btn {
+  position: fixed;
+  bottom: 40px;
+  right: 30px;
+  background-color: #7597de;
+  color: white;
+  text-decoration: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 30px;
+  font-weight: bold;
+  box-shadow: 0 0 10px #2b1055;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+}
+
+.home-btn:hover {
+  background-color: #4e4376;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+    .home-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+
+@media (min-width: 992px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

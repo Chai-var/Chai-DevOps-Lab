@@ -357,6 +357,10 @@ Planet Styling
     width: 20px;
     height: 3px;
   }
+  .home-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
 }
 
 /* Extra small devices (phones, 480px and down) */

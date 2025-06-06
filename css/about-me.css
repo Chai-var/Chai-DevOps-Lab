@@ -146,7 +146,13 @@ section.visible {
   background-color: #4e4376;
   transform: scale(1.05);
 }
-
+/* Responsive Design */
+@media (min-width: 768px) {
+    .home-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+  }
 /* Responsive scaling for large displays */
 @media (min-width: 2560px) {
   body {

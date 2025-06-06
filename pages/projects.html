@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Engineer Portfolio - Projects</title>
+    <link rel="stylesheet" href="../css/projects.css">
+</head>
+<body class="font-sans">
+
+    <header class="header">
+        <div class="container mx-auto px-4">
+            <h1 class="text-2xl font-bold">Projects</h1>
+        </div>
+    </header>
+
+    <main class="container mx-auto py-8 px-4">
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Project 1 -->
+            <article class="project-card">
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold mb-2">GitHub Actions CI/CD for Django Microservices</h2>
+                    <h3 class="text-lg font-semibold mb-2">Client: HDFC Life</h3>
+                    <div>
+                        <span class="badge">GitHub Actions</span>
+                        <span class="badge">Python</span>
+                        <span class="badge">GKE</span>
+                        <span class="badge">Bash</span>
+                        <span class="badge">Terraform</span>
+                    </div>
+                    <ul>
+                        <li>Designed branching strategy and repo structure across 10+ GitHub repos</li>
+                        <li>Set up GitHub runners for Dev/UAT/Prod environments on VMs</li>
+                        <li>Automated deployment of 7 microservices to GKE via CI/CD workflows</li>
+                    </ul>
+                    <button class="view-more-button">View More</button>
+                    <div class="view-more-content p-4">
+                        <p><b>Full Project Detail:</b></p>
+                        <ul>
+                            <li>Designed a structured branching strategy, along with standardized GitHub team and repository naming conventions to optimize collaboration and maintainability.</li>
+                            <li>Initialized 7 microservice repositories and 3 auxiliary repositories for common Python Django modules, shared services, and reusable CI/CD workflows.</li>
+                            <li>Provisioned and configured GitHub self-hosted runners across Dev, UAT, and Production environments on dedicated virtual machines.</li>
+                            <li>Automated runner setup using Bash scripts to install and configure necessary tools, ensuring uniformity and operational efficiency across environments.</li>
+                            <li>Engineered robust CI/CD workflows for all microservices, enabling automated build, test, and deployment processes to Google Kubernetes Engine (GKE) on Google Cloud Platform (GCP).</li>
+                            <li>Implemented Python scripts to automate the creation and management of GitHub and GCP secrets, reducing manual overhead.</li>
+                        </ul>
+
+                        <h4>Project Impact</h4>
+                        <ul>
+                            <li>Eliminated manual errors and saved significant setup time through Python-based automation of secrets management.</li>
+                            <li>Achieved seamless deployments of all microservices across Dev, UAT, and Prod environments in GKE clusters, ensuring consistent delivery and scalability.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="project-card">
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold mb-2">Python Automation Scripts for GitHub</h2>
+                     <h3 class="text-lg font-semibold mb-2">Client: HDFC Ltd</h3>
+                    <div>
+                        <span class="badge">Python</span>
+                        <span class="badge">Excel</span>
+                        <span class="badge">GitHub API</span>
+                    </div>
+                    <ul>
+                        <li>Automated creation of 50+ repos and 100+ teams in under 5 minutes</li>
+                        <li>Pulled and organized weekly GitHub metrics (commits, PRs, etc.)</li>
+                        <li>Automated input reading and output writing via Excel</li>
+                    </ul>
+                    <button class="view-more-button">View More</button>
+                    <div class="view-more-content p-4">
+                        <p><b>Full Project Detail:</b></p>
+                        <ul>
+                            <li>Developed Python scripts to automate the bulk creation of GitHub resources such as repositories and teams.</li>
+                            <li>Integrated Excel-based input handling to streamline and customize resource provisioning workflows.</li>
+                            <li>Built automation to extract GitHub metrics—including commits, pull requests (PRs), and activity stats—on a weekly schedule.</li>
+                            <li>Compiled and formatted all metric outputs into Excel sheets for simplified reporting and analysis.</li>
+                        </ul>
+
+                        <h4>Project Impact</h4>
+                        <ul>
+                            <li>Automated the creation of 50+ repositories and 100+ teams within 5 minutes, drastically cutting down manual provisioning time.</li>
+                            <li>Established a weekly metrics tracking system that enables consistent visibility into GitHub activity across teams.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article class="project-card">
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold mb-2">Enterprise DevSecOps Implementation</h2>
+                     <h3 class="text-lg font-semibold mb-2">Client: HDFC Ltd</h3>
+                    <div>
+                        <span class="badge">GitHub Actions</span>
+                        <span class="badge">Jenkins</span>
+                        <span class="badge">SonarQube</span>
+                        <span class="badge">Terraform</span>
+                        <span class="badge">IIS</span>
+                        <span class="badge">PowerShell</span>
+                    </div>
+                    <ul>
+                        <li>Built reusable CI/CD templates for Mulesoft, Salesforce, .NET Core</li>
+                        <li>Provisioned and maintained 16+ GitHub self-hosted runners</li>
+                        <li>Integrated SonarQube SAST with branch protection rules</li>
+                    </ul>
+                    <button class="view-more-button">View More</button>
+                    <div class="view-more-content p-4">
+                        <p><b>Full Project Detail:</b></p>
+                        <ul>
+                            <li>Architected and implemented GitHub Actions-based CI/CD pipelines for three major tech stacks: MuleSoft (180+ apps), Salesforce (monorepo with 5 child apps), and .NET Framework/Core, ensuring consistency, scalability, and compliance.</li>
+                            <li>Created reusable, modular workflow templates with configuration flexibility, enabling rapid onboarding and version control—cutting MuleSoft app build setup time by 60% and streamlining CI reuse across .NET projects.</li>
+                            <li>Provisioned and managed 16+ self-hosted GitHub runners optimized with stack-specific tools (Maven, MSBuild, SDKs), delivering scalable and cost-effective pipeline execution for both MuleSoft and .NET environments.</li>
+                            <li>Built secure CI workflows for Salesforce with integrated SonarQube SAST analysis and enforced Quality Gates. Unified 5 Salesforce teams into a centralized monorepo, enhancing collaboration and governance for 80+ developers.</li>
+                            <li>Automated .NET application deployments to Windows IIS servers, replacing manual steps with artifact-driven delivery and reducing release errors and deployment time.</li>
+                        </ul>
+
+                        <h4>Project Impact</h4>
+                        <ul>
+                            <li>Reduced CI/CD setup time by 80% with reusable pipeline templates.</li>
+                            <li>Enhanced security posture through integrated SAST checks and mandatory branch protection rules.</li>
+                            <li>Accelerated onboarding of new apps—cutting setup effort from hours to minutes.</li>
+                            <li>Promoted cross-team collaboration by consolidating workflows into a unified DevSecOps platform.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+               <!-- Project 4 -->
+               <article class="project-card">
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold mb-2">Triple-Gate Approval Workflow</h2>
+                     <h3 class="text-lg font-semibold mb-2">Client: HDFC Ltd</h3>
+                    <div>
+                        <span class="badge">GitHub Environments</span>
+                        <span class="badge">CODEOWNERS</span>
+                    </div>
+                    <ul>
+                        <li>Implemented 3-layer approval: Developer → Security → Central Team</li>
+                        <li>Used GitHub CODEOWNERS + environment protection</li>
+                        <li>Applied to 300+ repos for compliance and audit control</li>
+                    </ul>
+                    <button class="view-more-button">View More</button>
+                    <div class="view-more-content p-4">
+                        <p><b>Full Project Detail:</b></p>
+                        <ul>
+                            <li>Designed and enforced a robust multi-layered deployment approval workflow under the Triple-Gate Approval initiative.</li>
+                            <li>Maintained and standardized the <code>CODEOWNERS</code> configuration across 300+ repositories, assigning Application Leads for each project.</li>
+                            <li>Integrated a second-level gate by assigning the Security Team as Branch Owners and authorized Branch Mergers.</li>
+                            <li>Created and configured four GitHub environments per repository, appointing the Central Deployment Team as the final approval gate.</li>
+                        </ul>
+
+                        <h4>Project Impact</h4>
+                        <ul>
+                            <li>Accelerated approval timelines through automated GitHub notifications sent to designated approvers.</li>
+                            <li>Enabled complete audit traceability by recording and preserving all approval events.</li>
+                            <li>Eliminated unauthorized deployments by enforcing a secure, auditable three-step approval workflow.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+               <!-- Project 5 -->
+               <article class="project-card">
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold mb-2">Jira GitHub Auditor (POC)</h2>
+                     <h3 class="text-lg font-semibold mb-2">Client: HDFC Ltd</h3>
+                    <div>
+                        <span class="badge">JIRA</span>
+                        <span class="badge">GitHub Webhooks</span>
+                        <span class="badge">Automation Rules</span>
+                    </div>
+                    <ul>
+                        <li>Connected GitHub PR events to custom JIRA issues</li>
+                        <li>Enabled PR visibility for PMs without GitHub access</li>
+                        <li>Reduced extra GitHub license needs for non-devs</li>
+                    </ul>
+                    <button class="view-more-button">View More</button>
+                    <div class="view-more-content p-4">
+                        <p><b>Full Project Detail:</b></p>
+                        <ul>
+                            <li>Streamlined pull request approval for project managers by integrating GitHub with JIRA, ensuring audit compliance without requiring additional GitHub licenses.</li>
+                            <li>Configured GitHub repository webhooks to trigger JIRA automation endpoints and capture pull request metadata via subscribed PR events.</li>
+                            <li>Designed custom JIRA issue types and fields to automatically populate GitHub PR information within JIRA issues.</li>
+                            <li>Established end-to-end PR review workflows using JIRA automation rules, enabling seamless visibility and control.</li>
+                        </ul>
+
+                        <h4>Project Impact</h4>
+                        <ul>
+                            <li>Minimized unnecessary GitHub access for non-developer roles, reducing license overhead.</li>
+                            <li>Enabled a centralized and auditable PR approval process directly within JIRA.</li>
+                            <li>Fostered a unified review and tracking workflow across cross-functional teams.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+               <!-- Project 6 -->
+               <article class="project-card">
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold mb-2">CI/CD for Java Maven App</h2>
+                     <h3 class="text-lg font-semibold mb-2">Client: HDFC Ltd</h3>
+                    <div>
+                        <span class="badge">Jenkins</span>
+                        <span class="badge">Terraform</span>
+                        <span class="badge">Ansible</span>
+                        <span class="badge">GitHub</span>
+                    </div>
+                    <ul>
+                        <li>Built full CI/CD pipeline for Maven app with 90% automation</li>
+                        <li>Stored artifacts in AWS S3; provisioned EC2 infra via Terraform</li>
+                        <li>Used Ansible for reliable deployment across 4 environments</li>
+                    </ul>
+                    <button class="view-more-button">View More</button>
+                    <div class="view-more-content p-4">
+                        <p><b>Full Project Detail:</b></p>
+                        <ul>
+                            <li>Built complete CI/CD pipelines in Jenkins to automate the build, test, and deployment processes for Java Maven applications—reducing manual effort by 90%.</li>
+                            <li>Streamlined artifact management by orchestrating deployment workflows that version and store build artifacts in AWS S3 for better traceability.</li>
+                            <li>Defined a robust GitHub branching and multi-stage approval strategy to enforce code quality, compliance, and secure releases prior to pipeline execution.</li>
+                            <li>Provisioned scalable cloud infrastructure using Terraform, dynamically creating four EC2 instances across four subnets and an Ansible controller node for orchestration.</li>
+                            <li>Implemented Ansible playbooks to automate deployments across EC2 environments, ensuring consistency, reliability, and repeatability.</li>
+                            <li>Integrated Jenkins with GitHub, Terraform, and Ansible to enable event-driven deployments triggered by GitHub webhooks, simplifying complex deployment workflows.</li>
+                        </ul>
+
+                        <h4>Project Impact</h4>
+                        <ul>
+                            <li>Reduced deployment timelines from 1–2 weeks to under 24 hours, achieving an 85% reduction in release cycle time.</li>
+                            <li>Improved deployment governance and transparency through enforced stakeholder approvals.</li>
+                            <li>Eliminated configuration drift and manual errors through full automation of provisioning and deployment processes.</li>
+                            <li>Standardized infrastructure across environments using Infrastructure as Code (IaC), eliminating inconsistencies by 100%.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© <span id="currentYear"></span> Chaitra S — Building reliable, secure, and scalable DevOps solutions</p>
+    </footer>
+
+    <script>
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+    </script>
+    
+    <script>
+        // JavaScript to toggle the visibility of the "View More" content
+        const buttons = document.querySelectorAll('.view-more-button');
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                content.classList.toggle('active');
+                button.textContent = content.classList.contains('active') ? 'View Less' : 'View More';
+            });
+        });
+    </script>
+  <a href="../index.html" class="home-btn">← Home</a>
+  <script>
+    const input = document.getElementById("skillSearch");
+    input.addEventListener("input", () => {
+      const value = input.value.toLowerCase();
+      document.querySelectorAll(".skill-card").forEach(card => {
+        const match = card.dataset.skill.toLowerCase().includes(value);
+        card.style.display = match ? "flex" : "none";
+      });
+    });
+  </script>
+</body>
+</html>

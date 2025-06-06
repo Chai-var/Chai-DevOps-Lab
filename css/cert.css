@@ -1,0 +1,262 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0a192f;  /* Deep dark blue background */
+    color: #fff;
+    line-height: 1.6;
+    overflow: hidden; /* Hide scrollbars */
+    /* Animated Background */
+    background: linear-gradient(45deg, #0a192f, #172a45, #0a192f);
+    background-size: 300% 300%;
+    animation: gradientAnimation 15s ease infinite;
+
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+header, main, footer {
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    text-shadow: 0 0 10px #4a148c; /* Glowing effect */
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #b39ddb; /* Lighter purple/lavender */
+    animation: neonGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes neonGlow {
+    from {
+        text-shadow: 0 0 10px #4a148c, 0 0 20px #4a148c, 0 0 30px #4a148c;
+    }
+    to {
+        text-shadow: 0 0 5px #4a148c, 0 0 15px #4a148c, 0 0 25px #4a148c;
+    }
+}
+
+/* Certificates Section */
+.certificates-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Certificate Card */
+.certificate-card {
+    background: rgba(30, 144, 255, 0.1); /* Light blue with transparency */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin: 10px;
+    text-align: left;
+    width: 90%; /* Mobile width */
+    max-width: 600px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(5px); /* Space-like blur */
+    color: #bbdefb; /* Light blue for text */
+}
+
+.certificate-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.3); /* Highlight border on hover */
+}
+
+.certificate-card h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #b39ddb; /* Lighter purple/lavender */
+    text-shadow: 0 0 5px #4a148c;
+}
+
+.certificate-card p {
+    margin: 5px 0;
+}
+
+/* Actions (Buttons) */
+.actions {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.button, .credly-link {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px 0;
+    text-decoration: none;
+    color: #fff;
+    background-color: #4a148c; /* Deep purple */
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover, .credly-link:hover {
+    background-color: #6a1b9a; /* Lighter purple */
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Credly Link & Badge */
+.credly-link {
+    background-color: #2e7d32;
+}
+
+.credly-link:hover {
+    background-color: #388e3c;
+}
+
+.badge-image {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #172a45; /* Dark blue */
+    color: #bbdefb;
+}
+
+/* Star Animation (Optional) */
+/* Add this if you want a subtle star effect */
+/* Add this if you want a subtle star effect */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><defs><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/></filter></defs><rect width="100%" height="100%" filter="url(#noise)" fill="transparent"/></svg>');
+    opacity: 0.1;
+    z-index: -1;
+    animation: twinkle 5s linear infinite; /* Adjusted animation speed and type */
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.1; }
+    50% { opacity: 0.2; }
+    100% { opacity: 0.1; }
+}
+
+.home-btn {
+  position: fixed;
+  bottom: 40px;
+  right: 30px;
+  background-color: #7597de;
+  color: white;
+  text-decoration: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 30px;
+  font-weight: bold;
+  box-shadow: 0 0 10px #2b1055;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+}
+
+.home-btn:hover {
+  background-color: #4e4376;
+  transform: scale(1.05);
+}
+/* Media Queries for Responsiveness */
+/* Mobile (480px) */
+@media (max-width: 480px) {
+    .certificates-section {
+        padding: 10px; /* Reduced padding for smaller screens */
+    }
+
+    .certificate-card {
+        padding: 15px; /* Reduced padding inside card */
+        margin: 5px; /* Reduced margin around the card */
+    }
+
+    .actions {
+        flex-direction: column; /* Stack buttons vertically */
+    }
+
+    .button, .credly-link {
+        padding: 8px 16px; /* Reduced button padding */
+        margin: 5px 0; /* Added margin for vertical spacing */
+        font-size: 0.9rem; /* Reduced font size */
+    }
+}
+
+/* Tablet (780px) */
+@media (min-width: 781px) {
+    .certificate-card {
+        width: 70%; /* Adjust card width for larger screens */
+    }
+
+    .actions {
+        flex-direction: row; /* Keep buttons in row */
+        justify-content: space-around; /* Distribute buttons evenly */
+    }
+
+    .button, .credly-link {
+        margin: 5px;
+    }
+        .home-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Laptop (12-14 inch screens) */
+@media (min-width: 1200px) and (max-width: 1440px) {
+    .certificate-card {
+        width: 50%; /* Reduce card width for laptop */
+        max-width: 800px;
+    }
+
+    /* Enhance padding for buttons and image for better spacing */
+    .button, .credly-link {
+        padding: 12px 24px;
+    }
+
+    .badge-image {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Large Desktop (27 inch and up) */
+@media (min-width: 1441px) {
+    .certificate-card {
+        width: 40%; /* Even smaller card for large desktop */
+    }
+
+    .button, .credly-link {
+        font-size: 1.1rem;
+    }
+
+    .badge-image {
+        width: 70px;
+        height: 70px;
+    }
+}
